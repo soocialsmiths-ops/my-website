@@ -16,13 +16,15 @@
     content="Cinematic property video, social media & influencer campaigns for real estate developers — Mumbai & Dubai.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://socialsmiths.in/">
-  <meta property="og:image" content="https://socialsmiths.in/Pics/logo.png">
+  <meta property="og:image" content="https://socialsmiths.in/Pics/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Social Smiths">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Social Smiths — Real Estate Marketing Agency in Mumbai & Dubai">
   <meta name="twitter:description"
     content="Cinematic property video, social media & influencer campaigns for real estate developers — Mumbai & Dubai.">
-  <meta name="twitter:image" content="https://socialsmiths.in/Pics/logo.png">
+  <meta name="twitter:image" content="https://socialsmiths.in/Pics/og-preview.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -661,7 +663,6 @@
     #about,
     #services,
     #work,
-    #process,
     #testimonials,
     #contact,
     footer {
@@ -1282,74 +1283,6 @@
       backdrop-filter: blur(10px) saturate(150%);
     }
 
-    /* ═══ PROCESS ═══ */
-    #process {
-      padding: 120px 56px;
-      background: var(--off);
-    }
-
-    .p-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      border-left: 1px solid var(--border);
-      margin-top: 64px;
-    }
-
-    .p-step {
-      padding: 32px 24px;
-      border-right: 1px solid var(--border);
-      position: relative;
-      transition: background .3s;
-    }
-
-    .p-step::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: var(--lime);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform .5s cubic-bezier(.16, 1, .3, 1);
-    }
-
-    .p-step:hover::before {
-      transform: scaleX(1);
-    }
-
-    .p-step:hover {
-      background: rgba(193, 255, 114, 0.02);
-    }
-
-    .p-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 48px;
-      color: rgba(255, 255, 255, 0.04);
-      line-height: 1;
-      margin-bottom: 18px;
-      transition: color .3s;
-    }
-
-    .p-step:hover .p-num {
-      color: rgba(193, 255, 114, 0.1);
-    }
-
-    .p-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 22px;
-      letter-spacing: 2px;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-
-    .p-desc {
-      font-size: 12px;
-      line-height: 1.8;
-      color: rgba(240, 240, 238, 0.28);
-    }
-
     /* ═══ TESTIMONIALS — GOOGLE REVIEWS STYLE ═══ */
     #testimonials {
       padding: 60px 56px 60px;
@@ -1784,20 +1717,6 @@
         aspect-ratio: 9/14 !important;
       }
 
-      #process {
-        padding: 80px 28px;
-      }
-
-      .p-grid {
-        grid-template-columns: repeat(3, 1fr);
-        border-left: none;
-      }
-
-      .p-step:first-child,
-      .p-step:nth-child(3) {
-        border-left: 1px solid var(--border);
-      }
-
       #testimonials {
         padding: 80px 28px;
       }
@@ -1838,10 +1757,6 @@
         grid-column: span 1;
       }
 
-      .p-grid {
-        grid-template-columns: 1fr;
-      }
-
       .nums-row {
         grid-template-columns: 1fr;
       }
@@ -1876,7 +1791,6 @@
       #about,
       #services,
       #work,
-      #process,
       #testimonials,
       #contact {
         padding-left: 20px;
@@ -2584,38 +2498,7 @@
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section id="process">
-    <div class="section-label">How We Work</div>
-    <h2 class="big-h reveal">Brief to <em>Viral</em><br>in 5 Steps.</h2>
-    <div class="p-grid">
-      <div class="p-step">
-        <div class="p-num">01</div>
-        <div class="p-title">Onboard</div>
-        <p class="p-desc">Deep dive into your brand, goals, market, and competitors.</p>
-      </div>
-      <div class="p-step">
-        <div class="p-num">02</div>
-        <div class="p-title">Strategise</div>
-        <p class="p-desc">Data-backed content strategy and campaign roadmap.</p>
-      </div>
-      <div class="p-step">
-        <div class="p-num">03</div>
-        <div class="p-title">Create</div>
-        <p class="p-desc">Shoot, edit, and produce scroll-stopping content.</p>
-      </div>
-      <div class="p-step">
-        <div class="p-num">04</div>
-        <div class="p-title">Publish</div>
-        <p class="p-desc">Deploy on schedule with hooks optimised for reach.</p>
-      </div>
-      <div class="p-step">
-        <div class="p-num">05</div>
-        <div class="p-title">Optimise</div>
-        <p class="p-desc">Analyse performance, iterate, and scale what works.</p>
-      </div>
-    </div>
-  </section>
+
 
   <!-- ABOUT -->
   <section id="about">
@@ -2656,7 +2539,7 @@
       </div>
       <div class="founder-card reveal">
         <div class="founder-img-wrap">
-          <img src="Pics/prarit.png" alt="Prarit Singh"
+          <img src="Pics/prarit.jpg" alt="Prarit Singh"
             style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
           <div class="founder-tag">Co-Founder</div>
         </div>
@@ -3360,12 +3243,6 @@
       });
     });
 
-    // ── PROCESS ──
-    gsap.from('.p-step', {
-      opacity: 0, y: 32, stagger: 0.08, duration: 0.8, ease: 'power3.out',
-      scrollTrigger: { trigger: '.p-grid', start: 'top 78%', once: true }
-    });
-
     // ── TESTIMONIALS ──
     gsap.from('.t-card', {
       opacity: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out',
@@ -3622,15 +3499,52 @@
         ctx.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
       }
 
-      // Preload frames
-      for (let i = 1; i <= FRAME_COUNT; i++) {
+      // Preload frames — deferred so this ~27MB sequence doesn't compete
+      // with fonts/hero video/critical content for bandwidth on first load.
+      // Frame 1 loads immediately (it's the first thing drawn); the rest
+      // load in small batches during browser idle time after page load.
+      function loadFrame(i) {
         const img = new Image();
         img.src = FRAMES_DIR + 'frame_' + String(i).padStart(4, '0') + '.jpg';
         img.onload = img.onerror = () => {
           loadedFrames++;
           if (loadedFrames === FRAME_COUNT) { drawFrame(0); currentFrame = 0; }
         };
-        frames.push(img);
+        frames[i - 1] = img;
+      }
+
+      loadFrame(1); // needed immediately for the first paint of this section
+
+      function loadRemainingFrames() {
+        const BATCH_SIZE = 12;
+        let next = 2;
+        function loadBatch(deadline) {
+          let count = 0;
+          while (next <= FRAME_COUNT && count < BATCH_SIZE &&
+                 (!deadline || deadline.timeRemaining() > 0 || count === 0)) {
+            loadFrame(next);
+            next++;
+            count++;
+          }
+          if (next <= FRAME_COUNT) {
+            if ('requestIdleCallback' in window) {
+              requestIdleCallback(loadBatch, { timeout: 500 });
+            } else {
+              setTimeout(() => loadBatch(null), 50);
+            }
+          }
+        }
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadBatch, { timeout: 500 });
+        } else {
+          setTimeout(() => loadBatch(null), 50);
+        }
+      }
+
+      if (document.readyState === 'complete') {
+        loadRemainingFrames();
+      } else {
+        window.addEventListener('load', loadRemainingFrames);
       }
 
       // Cards

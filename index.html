@@ -271,53 +271,6 @@
       }
     }
 
-    /* ═══ LOADER ═══ */
-    #loader {
-      position: fixed;
-      inset: 0;
-      background: var(--black);
-      z-index: 9000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-    }
-
-    .loader-icon {
-      width: 80px;
-      height: 80px;
-      opacity: 0;
-    }
-
-    .loader-wordmark {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 13px;
-      letter-spacing: 8px;
-      color: rgba(255, 255, 255, 0.2);
-      opacity: 0;
-    }
-
-    .loader-bar-track {
-      width: 180px;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.07);
-    }
-
-    .loader-bar-fill {
-      height: 1px;
-      width: 0%;
-      background: var(--lime);
-      box-shadow: 0 0 12px rgba(193, 255, 114, 0.6);
-    }
-
-    .loader-pct {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 11px;
-      letter-spacing: 5px;
-      color: var(--charcoal);
-    }
-
     /* ═══ NAV ═══ */
     nav {
       position: fixed;
@@ -2160,18 +2113,6 @@
   <img id="cur-logo" src="Pics/Icon.png" alt=""
     style="position:fixed;width:36px;height:36px;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:none;">
 
-  <!-- LOADER -->
-  <div id="loader">
-    <img class="loader-icon" id="l-icon"
-      src="Pics/loader-icon.webp"
-      alt="">
-    <div class="loader-wordmark" id="l-word">SOCIAL SMITHS</div>
-    <div class="loader-bar-track">
-      <div class="loader-bar-fill" id="l-bar"></div>
-    </div>
-    <div class="loader-pct" id="l-pct">0%</div>
-  </div>
-
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu">
     <a href="#about" class="mm-link">About</a>
@@ -2360,7 +2301,7 @@
 
       <div class="reel-card">
         <iframe
-          src="https://www.youtube.com/embed/8VbcUp0jEG4?autoplay=1&mute=1&loop=1&playlist=8VbcUp0jEG4&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+          data-src="https://www.youtube.com/embed/8VbcUp0jEG4?autoplay=1&mute=1&loop=1&playlist=8VbcUp0jEG4&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
         <div class="reel-overlay">
@@ -2383,7 +2324,7 @@
 
       <div class="reel-card">
         <iframe
-          src="https://www.youtube.com/embed/9s9c1XuOXdo?autoplay=1&mute=1&loop=1&playlist=9s9c1XuOXdo&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+          data-src="https://www.youtube.com/embed/9s9c1XuOXdo?autoplay=1&mute=1&loop=1&playlist=9s9c1XuOXdo&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
         <div class="reel-overlay">
@@ -2406,7 +2347,7 @@
 
       <div class="reel-card">
         <iframe
-          src="https://www.youtube.com/embed/ijhPcs9tYVY?autoplay=1&mute=1&loop=1&playlist=ijhPcs9tYVY&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+          data-src="https://www.youtube.com/embed/ijhPcs9tYVY?autoplay=1&mute=1&loop=1&playlist=ijhPcs9tYVY&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
         <div class="reel-overlay">
@@ -2429,7 +2370,7 @@
 
       <div class="reel-card reel-card-wide">
         <iframe
-          src="https://www.youtube.com/embed/WvYWguQ-tAY?autoplay=1&mute=1&loop=1&playlist=WvYWguQ-tAY&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+          data-src="https://www.youtube.com/embed/WvYWguQ-tAY?autoplay=1&mute=1&loop=1&playlist=WvYWguQ-tAY&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
         <div class="reel-overlay">
@@ -2452,7 +2393,7 @@
 
       <div class="reel-card">
         <iframe
-          src="https://www.youtube.com/embed/3eEmL1p8Fj8?autoplay=1&mute=1&loop=1&playlist=3eEmL1p8Fj8&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+          data-src="https://www.youtube.com/embed/3eEmL1p8Fj8?autoplay=1&mute=1&loop=1&playlist=3eEmL1p8Fj8&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
         <div class="reel-overlay">
@@ -2851,28 +2792,8 @@
       });
     }
 
-    // ── LOADER ──
-    const lBar = document.getElementById('l-bar');
-    const lPct = document.getElementById('l-pct');
-    const lIcon = document.getElementById('l-icon');
-    const lWord = document.getElementById('l-word');
-    gsap.to(lIcon, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' });
-    gsap.to(lWord, { opacity: 1, duration: 0.5, delay: 0.3, ease: 'power2.out' });
-    let p = 0;
-    const tick = setInterval(() => {
-      p += Math.random() * 8 + 2;
-      if (p >= 100) { p = 100; clearInterval(tick); }
-      lBar.style.width = p + '%';
-      lPct.textContent = Math.floor(p) + '%';
-      if (p === 100) setTimeout(launch, 350);
-    }, 55);
-
-    function launch() {
-      gsap.timeline()
-        .to('#loader', { yPercent: -100, duration: 1.2, ease: 'power3.inOut' })
-        .set('#loader', { display: 'none' });
-      setTimeout(startTypewriter, 100);
-    }
+    // ── PAGE START ── (loader removed; typewriter just starts on its own)
+    startTypewriter();
 
     // ── TYPEWRITER cycling words (in the visible scroll-intro headline) ──
     function startTypewriter() {
@@ -3054,15 +2975,49 @@
     })();
 
     // ── REEL PLAYER CONTROLS (YouTube IFrame API: play/pause + scrub) ──
+    // Iframes carry data-src (not src) in the markup so nothing is fetched
+    // on page load — 5 autoplaying embeds up front was the biggest single
+    // load-time cost on this page. We only point them at YouTube and pull
+    // in the API script once the reels section is about to be scrolled
+    // into view.
     (function () {
       const cards = Array.from(document.querySelectorAll('.reel-card'));
       if (!cards.length) return;
 
-      const apiScript = document.createElement('script');
-      apiScript.src = 'https://www.youtube.com/iframe_api';
-      document.head.appendChild(apiScript);
-
+      const workSection = document.getElementById('work') || cards[0].closest('section');
+      let started = false;
       const entries = [];
+
+      function start() {
+        if (started) return;
+        started = true;
+
+        cards.forEach((card) => {
+          const iframe = card.querySelector('iframe');
+          if (iframe && iframe.dataset.src) {
+            iframe.src = iframe.dataset.src;
+            iframe.removeAttribute('data-src');
+          }
+        });
+
+        const apiScript = document.createElement('script');
+        apiScript.src = 'https://www.youtube.com/iframe_api';
+        document.head.appendChild(apiScript);
+      }
+
+      if (workSection) {
+        const lazyObs = new IntersectionObserver((obsEntries) => {
+          obsEntries.forEach((e) => {
+            if (e.isIntersecting) {
+              start();
+              lazyObs.disconnect();
+            }
+          });
+        }, { rootMargin: '600px 0px', threshold: 0 });
+        lazyObs.observe(workSection);
+      } else {
+        start();
+      }
 
       window.onYouTubeIframeAPIReady = function () {
         cards.forEach((card) => {

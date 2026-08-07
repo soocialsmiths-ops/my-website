@@ -1767,6 +1767,12 @@
       height: 100vh;
       width: 100%;
       overflow: hidden;
+      /* Tiny blurred stand-in for frame 1 (126 bytes, inlined) — paints
+         instantly so there's never a blank flash while the real frame
+         downloads. The canvas fades in on top once it's ready. */
+      background-image: url("data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwBACdASogABIAPuVcpU2pJSOiMAwBIByJZQC/ayGC/AQi4i5yZ7clqFN/wrVYAP6vnT7qJOaAg+s6RxQFZJHkFpxpotoDgx0/NR8JtI33JlaABIQ5OD+h3Tw1KF6IDzPwYeAkXAaBOAAA");
+      background-size: cover;
+      background-position: center;
     }
 
     #ss-frameCanvas {
@@ -1776,6 +1782,7 @@
       z-index: 4;
       opacity: 0;
       pointer-events: none;
+      transition: opacity .3s ease;
     }
 
     #ss-frameCanvas.ss-canvas-active {

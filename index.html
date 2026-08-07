@@ -167,6 +167,34 @@
       animation: drift3 22s ease-in-out infinite;
     }
 
+    /* On narrow screens the blobs are much smaller in absolute pixels
+       (65vw on a 390px phone ≈ 250px) but the blur radius above is a
+       fixed px value sized for desktop — blurring something that small
+       by 90-100px spreads its color to near-nothing, which is why the
+       background reads as flat black on mobile instead of the intended
+       purple glow. Scale blobs up and blur down so the same effect
+       actually reads at phone width. */
+    @media (max-width: 768px) {
+      .bg-blob-1 {
+        width: 130vw;
+        height: 130vw;
+        filter: blur(45px);
+        background: radial-gradient(circle, rgba(77, 33, 168, 0.7) 0%, transparent 70%);
+      }
+      .bg-blob-2 {
+        width: 110vw;
+        height: 110vw;
+        filter: blur(50px);
+        background: radial-gradient(circle, rgba(193, 255, 114, 0.16) 0%, transparent 70%);
+      }
+      .bg-blob-3 {
+        width: 95vw;
+        height: 95vw;
+        filter: blur(50px);
+        background: radial-gradient(circle, rgba(45, 0, 128, 0.65) 0%, transparent 70%);
+      }
+    }
+
     @keyframes drift1 {
 
       0%,

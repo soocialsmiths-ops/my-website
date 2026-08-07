@@ -1767,12 +1767,66 @@
       height: 100vh;
       width: 100%;
       overflow: hidden;
-      /* Tiny blurred stand-in for frame 1 (126 bytes, inlined) — paints
-         instantly so there's never a blank flash while the real frame
-         downloads. The canvas fades in on top once it's ready. */
-      background-image: url("data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwBACdASogABIAPuVcpU2pJSOiMAwBIByJZQC/ayGC/AQi4i5yZ7clqFN/wrVYAP6vnT7qJOaAg+s6RxQFZJHkFpxpotoDgx0/NR8JtI33JlaABIQ5OD+h3Tw1KF6IDzPwYeAkXAaBOAAA");
-      background-size: cover;
-      background-position: center;
+      /* Brand-toned gradient placeholder — shows behind the canvas until
+         frame 1 paints. Unlike a stretched photo, this looks intentional
+         at any aspect ratio (phone or desktop). */
+      background: radial-gradient(120% 90% at 50% 30%, #1a1f16 0%, #0c0d0a 55%, var(--black) 100%);
+    }
+
+    .ss-loading-mark {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 18px;
+      opacity: 1;
+      transition: opacity .5s ease;
+      pointer-events: none;
+    }
+
+    .ss-scroll-sticky.ss-frame-ready .ss-loading-mark {
+      opacity: 0;
+    }
+
+    .ss-loading-wordmark {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      letter-spacing: 9px;
+      color: rgba(255, 255, 255, 0.35);
+      animation: ssLoadingPulse 1.6s ease-in-out infinite;
+    }
+
+    .ss-loading-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .ss-loading-dots span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--lime);
+      animation: ssLoadingDot 1.2s ease-in-out infinite;
+    }
+
+    .ss-loading-dots span:nth-child(2) { animation-delay: .15s; }
+    .ss-loading-dots span:nth-child(3) { animation-delay: .3s; }
+
+    @keyframes ssLoadingPulse {
+      0%, 100% { opacity: 0.35; }
+      50% { opacity: 0.8; }
+    }
+
+    @keyframes ssLoadingDot {
+      0%, 100% { transform: translateY(0); opacity: 0.4; }
+      50% { transform: translateY(-6px); opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ss-loading-wordmark, .ss-loading-dots span { animation: none; }
     }
 
     #ss-frameCanvas {
@@ -2148,6 +2202,10 @@
   <!-- SCROLL STOP ANIMATION -->
   <section class="ss-scroll-animation" id="services">
     <div class="ss-scroll-sticky">
+      <div class="ss-loading-mark" aria-hidden="true">
+        <div class="ss-loading-dots"><span></span><span></span><span></span></div>
+        <div class="ss-loading-wordmark">SOCIAL SMITHS</div>
+      </div>
       <canvas id="ss-frameCanvas"></canvas>
 
       <div class="ss-callout ss-intro" data-show="0" data-hide="0.10">
@@ -3470,7 +3528,16 @@
         img.src = FRAMES_DIR + 'frame_' + String(i).padStart(4, '0') + '.webp';
         img.onload = img.onerror = () => {
           loadedFrames++;
-          if (loadedFrames === FRAME_COUNT) { drawFrame(0); currentFrame = 0; }
+          // Frame 1 must paint the instant it's ready — not once all 452
+          // frames have finished — otherwise slow connections stare at
+          // an empty canvas for several seconds even though the one
+          // frame they actually need loaded almost immediately.
+          if (i === 1 && currentFrame === -1) {
+            drawFrame(0);
+            currentFrame = 0;
+            const sticky = document.querySelector('.ss-scroll-sticky');
+            if (sticky) sticky.classList.add('ss-frame-ready');
+          }
         };
         frames[i - 1] = img;
       }
@@ -3523,7 +3590,11 @@
       const section = document.querySelector('.ss-scroll-animation');
       function loop() {
         requestAnimationFrame(loop);
-        if (!section || loadedFrames < FRAME_COUNT) return;
+        // Only wait for frame 1 (currentFrame gets set to 0 the instant it
+        // loads) — not the full 452-frame sequence. Any frame scrolled to
+        // before it's individually downloaded just holds the last drawn
+        // frame until it arrives, instead of blocking the whole hero.
+        if (!section || currentFrame === -1) return;
         const rect = section.getBoundingClientRect();
         const scrollable = section.offsetHeight - window.innerHeight;
         if (scrollable <= 0) return;

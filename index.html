@@ -1765,6 +1765,10 @@
       position: sticky;
       top: 0;
       height: 100vh;
+      height: 100dvh; /* actual visible viewport on mobile, not the
+                          address-bar-hidden max height 100vh assumes —
+                          fixes the black bar that flashed at the bottom
+                          while the browser chrome animated during scroll */
       width: 100%;
       overflow: hidden;
       /* Brand-toned gradient placeholder — shows behind the canvas until
@@ -3497,10 +3501,16 @@
 
       function resizeCanvas() {
         const dpr = window.devicePixelRatio || 1;
-        canvas.width = window.innerWidth * dpr;
-        canvas.height = window.innerHeight * dpr;
-        canvas.style.width = window.innerWidth + 'px';
-        canvas.style.height = window.innerHeight + 'px';
+        // visualViewport reflects the real visible area on mobile (shrinks
+        // when the address bar is showing); window.innerHeight alone can
+        // briefly disagree with it while the browser chrome animates
+        // during a scroll, which is what left the black gap at the bottom.
+        const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+        const vw = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+        canvas.width = vw * dpr;
+        canvas.height = vh * dpr;
+        canvas.style.width = vw + 'px';
+        canvas.style.height = vh + 'px';
         if (currentFrame >= 0) drawFrame(currentFrame);
       }
 
@@ -3646,6 +3656,10 @@
       loop();
       resizeCanvas();
       window.addEventListener('resize', resizeCanvas);
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', resizeCanvas);
+        window.visualViewport.addEventListener('scroll', resizeCanvas);
+      }
     })();
   </script>
 </body>

@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://socialsmiths.in/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="description"
-    content="Social Smiths is a real estate marketing agency in Mumbai & Dubai — cinematic property video, social media management & influencer campaigns for developers, on retainer.">
+    content="Real estate marketing agency in Mumbai & Dubai — cinematic property video, social media and influencer campaigns for developers, on monthly retainer.">
   <meta property="og:title" content="Social Smiths — Real Estate Marketing Agency in Mumbai & Dubai">
   <meta property="og:description"
     content="Cinematic property video, social media & influencer campaigns for real estate developers — Mumbai & Dubai.">
@@ -47,7 +47,7 @@
     ],
     "founder": [
       { "@type": "Person", "name": "Brendan Dsouza", "sameAs": "https://www.instagram.com/shotbybrendan_/" },
-      { "@type": "Person", "name": "Prerit Singh" }
+      { "@type": "Person", "name": "Prarit Singh" }
     ],
     "knowsAbout": [
       "real estate marketing",
@@ -69,7 +69,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -944,10 +944,271 @@
       }
     }
 
+    /* ═══ PRESS — FEATURED IN (digital newspaper replica) ═══ */
+    #press {
+      padding: 40px 56px 130px;
+    }
+
+    .press-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.7fr 1fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    /* --- the paper --- */
+    .paper {
+      position: relative;
+      max-width: 360px;
+      justify-self: center;
+      background: #f7f5ef;
+      color: #14110c;
+      padding: 18px 20px 22px;
+      border-radius: 2px;
+      transform: rotate(-1.4deg);
+      box-shadow: 0 34px 70px rgba(0, 0, 0, .55), 0 2px 0 rgba(0, 0, 0, .05);
+      transition: transform .45s ease;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .paper:hover {
+      transform: rotate(-0.3deg) scale(1.012);
+    }
+
+    .paper::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-1.4deg);
+      width: 92px;
+      height: 26px;
+      background: rgba(193, 255, 114, .32);
+      border: 1px solid rgba(193, 255, 114, .5);
+      z-index: 3;
+    }
+
+    /* folio line */
+    /* masthead — big yellow band, as on the printed front page */
+    .paper-masthead {
+      background: #f7d117;
+      margin: -18px -20px 0;
+      padding: 13px 16px 9px;
+      text-align: center;
+    }
+
+    .paper-masthead .mh-wm {
+      display: block;
+      width: 78%;
+      max-width: 300px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .paper-dateline {
+      background: #fff;
+      border-top: 2px solid #1b4fa4;
+      margin: 0 -20px 10px;
+      padding: 4px 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 7.5px;
+      letter-spacing: .3px;
+      color: #333;
+      text-align: center;
+    }
+
+    .paper-folio {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8px;
+      letter-spacing: .5px;
+      color: #4a453c;
+      padding-bottom: 7px;
+      border-bottom: 2px solid #b8231f;
+      margin-bottom: 12px;
+    }
+
+    .paper-folio .wm {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-weight: 700;
+      color: #172868;
+      letter-spacing: -.3px;
+      font-size: 14px;
+    }
+
+    .paper-folio .wm i {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background: #e42328;
+      margin: 0 1px 2px;
+      font-style: normal;
+    }
+
+    /* section headline */
+    .paper-head {
+      font-family: 'PT Serif', Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.2;
+      letter-spacing: -.2px;
+      color: #0f0d09;
+      margin-bottom: 14px;
+    }
+
+    /* two-column body */
+    .paper-cols {
+      display: grid;
+      grid-template-columns: 62px 1fr;
+      gap: 11px;
+      align-items: start;
+      margin-bottom: 14px;
+    }
+
+    .paper-badge {
+      border: 1px solid #d9d4c7;
+      padding: 6px 4px;
+      text-align: center;
+      line-height: 1.25;
+    }
+
+    .paper-badge .pb-kicker {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 6.5px;
+      letter-spacing: .8px;
+      color: #7a736a;
+      text-transform: uppercase;
+    }
+
+    .paper-badge .pb-wm {
+      display: block;
+      width: 84%;
+      height: auto;
+      margin: 3px auto;
+    }
+
+    .paper-badge .pb-hot {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 800;
+      font-size: 7.5px;
+      letter-spacing: -.2px;
+      color: #d0202a;
+      text-transform: uppercase;
+    }
+
+    .paper-badge .pb-ex {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 5.5px;
+      letter-spacing: 1.2px;
+      color: #7a736a;
+      text-transform: uppercase;
+    }
+
+    .paper-lede {
+      font-family: 'PT Serif', Georgia, 'Times New Roman', serif;
+      font-size: 8px;
+      line-height: 1.55;
+      color: #332f28;
+      text-align: justify;
+      hyphens: auto;
+      columns: 2;
+      column-gap: 12px;
+    }
+
+    /* the photo */
+    .paper-figure {
+      border-top: 1px solid #ddd8cb;
+      padding-top: 12px;
+    }
+
+    .paper-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      filter: saturate(.92) contrast(1.02);
+    }
+
+    .paper-cap {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 9.5px;
+      letter-spacing: -.1px;
+      color: #14110c;
+      margin-top: 7px;
+      line-height: 1.45;
+    }
+
+    .paper-cap .cap-role {
+      font-weight: 400;
+      color: #5c564b;
+    }
+
+    /* --- right-hand text --- */
+    .press-text .section-label {
+      margin-bottom: 22px;
+    }
+
+    .press-text p {
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--text-dim);
+      max-width: 52ch;
+      margin-top: 20px;
+    }
+
+    .press-text p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    @media (max-width:960px) {
+      #press {
+        padding: 10px 24px 90px;
+      }
+
+      .press-grid {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+
+      .paper {
+        max-width: 330px;
+        margin: 0 auto;
+        transform: rotate(-1deg);
+      }
+
+      .paper-cols {
+        grid-template-columns: 58px 1fr;
+      }
+
+      .paper-lede {
+        columns: 1;
+      }
+    }
+
+    .inline-link {
+      color: var(--lime);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      white-space: nowrap;
+    }
+
+    @media (max-width:960px) {
+      .f-links a {
+        display: inline-block;
+        padding: 15px 4px;
+      }
+    }
+
     /* ═══ NUMBERS ═══ */
     #numbers {
       background: var(--lime);
     }
+
 
     .nums-row {
       display: grid;
@@ -2254,8 +2515,10 @@
         <div class="hero-birds" aria-hidden="true"></div>
         <div class="ss-callout-inner">
           <span class="ss-callout-label">Creative Marketing &nbsp;—&nbsp; Mumbai &nbsp;·&nbsp; Dubai</span>
-          <h1 class="ss-callout-title ss-intro-title">We make<br>Real Estate<br><em>Impossible to <span
-                id="type-word">Ignore.</span><span class="type-cursor">|</span></em></h1>
+          <h1 class="ss-callout-title ss-intro-title" aria-label="We make Real Estate Impossible to Ignore.">
+            <span aria-hidden="true">We make <br>Real Estate <br><em>Impossible to <span
+                id="type-word">Ignore.</span><span class="type-cursor">|</span></em></span>
+          </h1>
           <p class="ss-callout-desc">End-to-end creative studio for real estate developers — cinematic video, social
             media, and influencer campaigns.</p>
           <div class="hero-btns">
@@ -2314,7 +2577,8 @@
     <div class="section-label">Clientele</div>
     <h2 class="big-h reveal">Trusted by <em>Industry Leaders</em></h2>
     <p class="clientele-sub reveal">₹500Cr.+ in property value showcased, working with and across developers
-      building in Mumbai, Dubai &amp; beyond.</p>
+      building in Mumbai, Dubai &amp; beyond. <a class="inline-link" href="real-estate-marketing-agency-mumbai/">See how we
+      work as a real estate marketing agency in Mumbai &rarr;</a></p>
     <div class="logo-rails">
       <div class="logo-rail">
         <div class="logo-track">
@@ -2383,6 +2647,59 @@
     </div>
     <p class="clientele-note">*Social Smiths has directly worked with select developers, and has managed projects
       from others via broker and channel partner collaborations.</p>
+  </section>
+
+  <!-- PRESS — FEATURED IN -->
+  <section id="press">
+    <div class="press-grid">
+
+      <!-- digital replica of the printed Mid-Day feature -->
+      <figure class="paper reveal" aria-label="Mid-Day, Saturday August 22, 2026 — Navi Mumbai's Real Estate moment takes center stage. Team of Social Smiths felicitated.">
+        <div class="paper-masthead">
+          <img class="mh-wm" src="Pics/midday-logo.webp" width="700" height="144" loading="lazy" decoding="async"
+            alt="mid-day">
+        </div>
+        <div class="paper-dateline">August 22, 2026, Saturday &nbsp;|&nbsp; Mumbai &nbsp;|&nbsp; www.mid-day.com</div>
+
+        <div class="paper-folio">
+          <span>Navi Mumbai</span>
+          <span>A Special Marketing Initiative</span>
+        </div>
+
+        <div class="paper-head">Navi Mumbai's Real Estate moment takes center stage</div>
+
+        <div class="paper-cols">
+          <div class="paper-badge">
+            <div class="pb-kicker">Navi Mumbai</div>
+            <img class="pb-wm" src="Pics/midday-logo.webp" width="700" height="144" loading="lazy" decoding="async" alt="mid-day">
+            <div class="pb-hot">Hot Property</div>
+            <div class="pb-ex">Exhibition</div>
+          </div>
+          <p class="paper-lede">Reflecting the remarkable growth of Navi Mumbai's property market, the mid-day Hot
+            Property Exhibition highlighted the opportunities, developments and growing investor confidence shaping
+            the region's real estate story. The exhibition showcased a diverse range of residential and investment
+            opportunities while enabling visitors to interact directly with leading real estate brands of Navi
+            Mumbai.</p>
+        </div>
+
+        <div class="paper-figure">
+          <img src="Pics/press-team.webp" width="1500" height="759" loading="lazy" decoding="async"
+            alt="The Social Smiths team being felicitated on stage by the Mayor of Navi Mumbai, Sujata Patil, at the Mid-Day Hot Property Exhibition">
+          <figcaption class="paper-cap">Team of Social Smiths felicitated <span class="cap-role">&mdash; Official Influencer Marketing Partner, Navi Mumbai mid-day Hot Property Exhibition</span></figcaption>
+        </div>
+      </figure>
+
+      <div class="press-text">
+        <div class="section-label reveal">Press</div>
+        <h2 class="big-h reveal">As Featured In <em style="white-space:nowrap">Mid-Day</em></h2>
+        <p class="reveal">Social Smiths was the <strong>Official Influencer Marketing Partner</strong> for the Navi
+          Mumbai Mid-Day Hot Property Exhibition — and the team was felicitated on stage by the
+          <strong>Hon. Mayor of Navi Mumbai, Sujata Patil</strong>, covered in Mid-Day's special real estate
+          marketing feature. It's the same event where founder <strong>Brendan Dsouza</strong> was named
+          Mid-Day's <strong>Emerging Real Estate Influencer 2026</strong>.
+        </p>
+      </div>
+    </div>
   </section>
 
   <!-- WORK — REELS -->
@@ -2530,7 +2847,7 @@
         <div class="n-lbl">Average Engagement Rate</div>
       </div>
       <div class="n-cell">
-        <div class="n-ghost">K</div><span class="n-val">142</span><span class="n-suf">K</span>
+        <div class="n-ghost">K</div><span class="n-val">145</span><span class="n-suf">K</span>
         <div class="n-lbl">Founder Instagram Followers</div>
       </div>
     </div>
@@ -2854,11 +3171,23 @@
         <a href="#work">Work</a>
         <a href="#testimonials">Clients</a>
         <a href="#contact">Contact</a>
-        <a href="https://www.instagram.com/socialsmiths_" target="_blank">Instagram &#8599;</a>
+        <a href="real-estate-marketing-agency-mumbai/">Real Estate Marketing Mumbai</a>
+        <a href="https://www.instagram.com/socialsmiths_" target="_blank" rel="noopener">Instagram &#8599;</a>
       </div>
       <span class="f-copy">&copy; 2026 Social Smiths&trade; - All Rights Reserved</span>
     </div>
   </footer>
+
+  <script>
+    /* Safety net: if the GSAP CDN is blocked or down, reveal content instead of leaving it invisible */
+    window.addEventListener('load', function () {
+      if (typeof gsap === 'undefined') {
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          el.style.opacity = 1; el.style.transform = 'none';
+        });
+      }
+    });
+  </script>
 
   <script>
     gsap.registerPlugin(ScrollTrigger);

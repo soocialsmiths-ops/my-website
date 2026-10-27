@@ -367,6 +367,18 @@
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
 
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     .nav-logo {
       height: 54px;
       display: block;
@@ -1892,7 +1904,7 @@
       font-size: 10px;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--charcoal);
+      color: #8a8a8a; /* was var(--charcoal); raised for WCAG AA contrast on #0a0a0a */
       transition: color .2s;
     }
 
@@ -1902,7 +1914,7 @@
 
     .f-copy {
       font-size: 10px;
-      color: rgba(84, 84, 84, 0.5);
+      color: #7a7a7a; /* was rgba(84,84,84,.5); raised for WCAG AA contrast */
     }
 
     /* ═══ RESPONSIVE ═══ */
@@ -2560,6 +2572,8 @@
         </div>
       </div>
 
+      <h2 class="sr-only">Real estate marketing services</h2>
+
       <div class="ss-callout" data-show="0.16" data-hide="0.28">
         <div class="ss-callout-inner">
           <span class="ss-callout-label">01 / Social Media</span>
@@ -2753,7 +2767,7 @@
     <div class="reels-grid">
 
       <div class="reel-card">
-        <iframe
+        <iframe title="Bugatti Residences — property reel by Social Smiths"
           data-src="https://www.youtube.com/embed/8VbcUp0jEG4?autoplay=1&mute=1&loop=1&playlist=8VbcUp0jEG4&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
@@ -2768,7 +2782,7 @@
               <svg class="reel-ico-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               <svg class="reel-ico-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
             </button>
-            <div class="reel-scrub" aria-label="Seek">
+            <div class="reel-scrub">
               <div class="reel-scrub-fill"></div>
             </div>
           </div>
@@ -2776,7 +2790,7 @@
       </div>
 
       <div class="reel-card">
-        <iframe
+        <iframe title="Developer Villa Tour — property reel by Social Smiths"
           data-src="https://www.youtube.com/embed/9s9c1XuOXdo?autoplay=1&mute=1&loop=1&playlist=9s9c1XuOXdo&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
@@ -2791,7 +2805,7 @@
               <svg class="reel-ico-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               <svg class="reel-ico-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
             </button>
-            <div class="reel-scrub" aria-label="Seek">
+            <div class="reel-scrub">
               <div class="reel-scrub-fill"></div>
             </div>
           </div>
@@ -2799,7 +2813,7 @@
       </div>
 
       <div class="reel-card">
-        <iframe
+        <iframe title="Aerial Drone Campaign — property reel by Social Smiths"
           data-src="https://www.youtube.com/embed/ijhPcs9tYVY?autoplay=1&mute=1&loop=1&playlist=ijhPcs9tYVY&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
@@ -2814,7 +2828,7 @@
               <svg class="reel-ico-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               <svg class="reel-ico-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
             </button>
-            <div class="reel-scrub" aria-label="Seek">
+            <div class="reel-scrub">
               <div class="reel-scrub-fill"></div>
             </div>
           </div>
@@ -2822,7 +2836,7 @@
       </div>
 
       <div class="reel-card reel-card-wide">
-        <iframe
+        <iframe title="Real Estate Influencer Podcast — property reel by Social Smiths"
           data-src="https://www.youtube.com/embed/WvYWguQ-tAY?autoplay=1&mute=1&loop=1&playlist=WvYWguQ-tAY&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
@@ -2837,7 +2851,7 @@
               <svg class="reel-ico-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               <svg class="reel-ico-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
             </button>
-            <div class="reel-scrub" aria-label="Seek">
+            <div class="reel-scrub">
               <div class="reel-scrub-fill"></div>
             </div>
           </div>
@@ -2845,7 +2859,7 @@
       </div>
 
       <div class="reel-card">
-        <iframe
+        <iframe title="Influencer Collab Reel — property reel by Social Smiths"
           data-src="https://www.youtube.com/embed/3eEmL1p8Fj8?autoplay=1&mute=1&loop=1&playlist=3eEmL1p8Fj8&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
@@ -2860,7 +2874,7 @@
               <svg class="reel-ico-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
               <svg class="reel-ico-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
             </button>
-            <div class="reel-scrub" aria-label="Seek">
+            <div class="reel-scrub">
               <div class="reel-scrub-fill"></div>
             </div>
           </div>
@@ -3161,17 +3175,17 @@
       </div>
       <div class="form">
         <div class="f-row">
-          <div class="f-grp"><label class="f-lbl">Your Name</label><input type="text" id="f-name" class="f-ctrl"
+          <div class="f-grp"><label class="f-lbl" for="f-name">Your Name</label><input type="text" id="f-name" class="f-ctrl"
               placeholder="First &amp; Last Name"></div>
-          <div class="f-grp"><label class="f-lbl">Brand / Company</label><input type="text" id="f-brand" class="f-ctrl"
+          <div class="f-grp"><label class="f-lbl" for="f-brand">Brand / Company</label><input type="text" id="f-brand" class="f-ctrl"
               placeholder="Your project or company"></div>
         </div>
         <div class="f-row">
-          <div class="f-grp"><label class="f-lbl">Contact Number</label><input type="tel" id="f-phone" class="f-ctrl"
+          <div class="f-grp"><label class="f-lbl" for="f-phone">Contact Number</label><input type="tel" id="f-phone" class="f-ctrl"
               placeholder="+91 or +971 number"></div>
         </div>
         <div class="f-row">
-          <div class="f-grp"><label class="f-lbl">Service</label>
+          <div class="f-grp"><label class="f-lbl" for="f-service">Service</label>
             <select id="f-service" class="f-ctrl">
               <option disabled selected>Choose a service</option>
               <option>Social Media Management</option>
@@ -3180,7 +3194,7 @@
               <option>All Three / Not Sure Yet</option>
             </select>
           </div>
-          <div class="f-grp"><label class="f-lbl">Market</label>
+          <div class="f-grp"><label class="f-lbl" for="f-market">Market</label>
             <select id="f-market" class="f-ctrl">
               <option disabled selected>Where are you based?</option>
               <option>Mumbai</option>
@@ -3191,7 +3205,7 @@
             </select>
           </div>
         </div>
-        <div class="f-grp"><label class="f-lbl">Tell Us More</label><textarea id="f-message" class="f-ctrl"
+        <div class="f-grp"><label class="f-lbl" for="f-message">Tell Us More</label><textarea id="f-message" class="f-ctrl"
             placeholder="What are you working on? Tell us as much as you can."></textarea></div>
         <button class="f-submit" id="f-btn">Send It Over &#8594;</button>
       </div>

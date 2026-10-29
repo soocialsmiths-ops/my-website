@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio | Social Smiths — Real Estate Marketing &amp; Film Studio, Mumbai</title>
+<meta name="description" content="The Social Smiths portfolio: real estate reels, drone films, AI property films, brand IPs and influencer campaigns for developers and realtors across Mumbai, Dubai, Gurugram, Delhi NCR, Goa and Lonavala.">
+<link rel="canonical" href="https://socialsmiths.in/portfolio/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0b0c0b">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Social Smiths">
+<meta property="og:title" content="Social Smiths Portfolio — Built to Be Seen">
+<meta property="og:description" content="Reels, drone films, AI property films, brand IPs and influencer campaigns for real estate. See the work.">
+<meta property="og:url" content="https://socialsmiths.in/portfolio/">
+<meta property="og:image" content="https://socialsmiths.in/portfolio/assets/og-portfolio.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Social Smiths Portfolio — Built to Be Seen">
+<meta name="twitter:image" content="https://socialsmiths.in/portfolio/assets/og-portfolio.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="/portfolio/assets/hero.webp" fetchpriority="high">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"https://socialsmiths.in/"},
+{"@type":"ListItem","position":2,"name":"Portfolio","item":"https://socialsmiths.in/portfolio/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Social Smiths Portfolio","url":"https://socialsmiths.in/portfolio/",
+"description":"Real estate reels, drone films, AI property films, brand IPs and influencer campaigns by Social Smiths.",
+"publisher":{"@type":"Organization","name":"Social Smiths","legalName":"SOCIALSMITHS LLP","url":"https://socialsmiths.in/","email":"info@socialsmiths.in","telephone":"+91-90056-31414"}}
+</script>
+<style>
+:root{
+  --lime:#B9FF50; --lime-2:#C1FF72; --purple:#4A2C98; --violet:#7B4DFF;
+  --bg:#0b0c0b; --bg-2:#151715; --text:#fff; --muted:rgba(255,255,255,.82);
+  --grid:rgba(255,255,255,.035);
+  --wrap:1280px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:'Poppins',system-ui,sans-serif;line-height:1.45;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px clamp(16px,4vw,48px);transition:background .3s,backdrop-filter .3s}
+.nav.scrolled{background:rgba(8,9,8,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav .brand img{height:34px;width:auto}
+.nav .brand{opacity:0;transition:opacity .3s}
+.nav.scrolled .brand{opacity:1}
+.nav-links{display:flex;align-items:center;gap:clamp(12px,2.4vw,28px);font-size:14px;font-weight:500}
+.nav-links a{text-decoration:none;opacity:.85}
+.nav-links a:hover{opacity:1}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:#0b0c0b!important;opacity:1!important;font-weight:600;border-radius:999px;padding:10px 18px;text-decoration:none;font-size:14px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 30px rgba(185,255,80,.35)}
+
+/* HERO (slide 1) */
+.hero{position:relative;background:#050505;display:flex;justify-content:center}
+.hero img{width:100%;max-width:2000px;aspect-ratio:16/9;object-fit:cover}
+
+/* SLIDE BASE */
+.slide{position:relative;isolation:isolate;padding:clamp(56px,8vw,110px) clamp(16px,4vw,48px);
+  background:
+    linear-gradient(var(--grid) 1px,transparent 1px) 0 0/clamp(48px,4.2vw,64px) clamp(48px,4.2vw,64px),
+    linear-gradient(90deg,var(--grid) 1px,transparent 1px) 0 0/clamp(48px,4.2vw,64px) clamp(48px,4.2vw,64px),
+    linear-gradient(115deg,#1d201d 0%,#121412 45%,#050605 100%);
+  overflow:hidden}
+.slide>*{max-width:var(--wrap);margin-left:auto;margin-right:auto}
+.slide::before,.slide::after{content:"";position:absolute;z-index:-1;width:60vw;height:60vw;max-width:900px;max-height:900px;border-radius:50%;filter:blur(40px);pointer-events:none}
+.g-tr::before{top:-30%;right:-25%;background:radial-gradient(circle,rgba(74,44,152,.55),transparent 65%)}
+.g-tr-lime::before{top:-30%;right:-25%;background:radial-gradient(circle,rgba(46,160,40,.42),transparent 65%)}
+.g-bl::before{bottom:-35%;left:-25%;background:radial-gradient(circle,rgba(74,44,152,.35),transparent 65%)}
+.g-both::before{top:-30%;right:-25%;background:radial-gradient(circle,rgba(74,44,152,.5),transparent 65%)}
+.g-both::after{bottom:-35%;left:-30%;background:radial-gradient(circle,rgba(74,44,152,.45),transparent 65%)}
+.g-purple::after{bottom:-40%;left:-15%;width:90vw;height:70vw;max-width:1400px;background:radial-gradient(ellipse,rgba(74,44,152,.75),transparent 62%)}
+
+/* WHO WE ARE (slide 2) */
+.about{position:relative;padding:0;background:#000;overflow:hidden}
+.about .inner{position:relative;padding:clamp(80px,11vw,170px) clamp(16px,6vw,48px) clamp(70px,9vw,140px);text-align:center;
+  background:
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px) 0 0/clamp(80px,9vw,130px) clamp(80px,9vw,130px),
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px) 0 0/clamp(80px,9vw,130px) clamp(80px,9vw,130px),
+    radial-gradient(ellipse 55% 85% at 0% 0%,#7cd656 0%,rgba(80,150,55,.75) 22%,rgba(30,60,20,.4) 48%,transparent 72%),#000}
+.about h2{font-size:clamp(22px,2.2vw,31px);font-weight:700;margin-bottom:clamp(18px,2vw,28px)}
+.about p{max-width:1120px;margin:0 auto 1.4em;font-size:clamp(15px,1.75vw,25px);line-height:1.4;color:#fff}
+.about p b{font-weight:700}
+.about .site{font-weight:700;margin-top:1.5em;text-decoration:none;display:inline-block}
+.cities{background:var(--purple);display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:6px 0;padding:10px clamp(12px,3vw,40px);
+  font-family:'Aileron','Helvetica Neue',Arial,sans-serif;color:var(--lime);font-size:clamp(15px,2.1vw,30px)}
+.cities i{width:clamp(6px,.7vw,10px);height:clamp(6px,.7vw,10px);border-radius:50%;background:var(--lime);display:inline-block}
+.about-foot{height:clamp(24px,4vw,56px);background:#000}
+
+/* SECTION HEADER */
+.shead{display:flex;align-items:flex-start;gap:clamp(12px,1.6vw,22px);margin-bottom:clamp(36px,5vw,64px)}
+.shead .num{width:auto;height:clamp(64px,7.4vw,108px);flex:none;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+.shead h2{color:var(--lime);font-weight:700;text-transform:uppercase;font-size:clamp(20px,2.1vw,30px);line-height:1.3;letter-spacing:.005em;padding-top:clamp(2px,.8vw,12px)}
+.shead .sub{font-style:italic;font-size:clamp(14px,1.45vw,20px);max-width:900px;margin-top:2px;color:#fff}
+.shead .sub.lime{color:var(--lime);font-style:normal;font-weight:700;margin-top:4px}
+.hint{font-style:italic;font-size:clamp(12px,1.1vw,15px);color:var(--muted);margin-top:10px}
+
+/* ROWS / ITEMS */
+.row{display:flex;justify-content:space-around;align-items:flex-start;gap:clamp(20px,3vw,48px);flex-wrap:wrap}
+.row+.row{margin-top:clamp(48px,6vw,88px)}
+.item{display:flex;flex-direction:column;align-items:center;text-align:center;flex:0 1 auto}
+.lbl{color:var(--lime);font-weight:700;font-size:clamp(15px,1.6vw,23px);line-height:1.3;margin-bottom:clamp(10px,1.2vw,16px);max-width:300px}
+.cap{font-style:italic;font-size:clamp(12px,1.1vw,16px);line-height:1.35;color:#fff;max-width:270px;margin-top:2px}
+.phone{position:relative;display:block;width:clamp(150px,17.5vw,236px);transition:transform .35s cubic-bezier(.2,.7,.2,1),filter .35s}
+.phone.land{width:clamp(280px,33vw,444px)}
+.phone img{width:100%}
+.phone:hover,.phone:focus-visible{transform:translateY(-6px) scale(1.02);filter:drop-shadow(0 18px 40px rgba(123,77,255,.35))}
+.phone:focus-visible{outline:2px solid var(--lime);outline-offset:6px;border-radius:28px}
+.play{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:rgba(185,255,80,.92);box-shadow:0 6px 24px rgba(0,0,0,.45);opacity:0;transform:scale(.8);transition:opacity .25s,transform .25s}
+.play::after{content:"";position:absolute;left:23px;top:18px;border-left:16px solid #0b0c0b;border-top:11px solid transparent;border-bottom:11px solid transparent}
+.phone:hover .play,.phone:focus-visible .play{opacity:1;transform:scale(1)}
+@media (hover:none){.play{opacity:.9;transform:scale(.62);top:auto;bottom:16px;left:auto;right:12px;margin:0}}
+.group .phones{display:flex;gap:clamp(14px,2vw,28px);justify-content:center}
+.group.stack .phones{flex-direction:column;align-items:center;gap:clamp(14px,1.6vw,22px)}
+
+/* WHO WE WORK WITH */
+.big{font-family:'League Spartan','Poppins',sans-serif;font-weight:700;text-transform:uppercase;color:var(--lime);font-size:clamp(34px,3.6vw,52px);line-height:1.05;margin-bottom:clamp(28px,3.5vw,48px)}
+.big .white{color:#fff}
+.who-grid{display:grid;grid-template-columns:1fr 2fr 1fr;gap:clamp(20px,3vw,48px);align-items:start}
+.who .col{display:flex;flex-direction:column;align-items:center}
+.who .lbl{text-align:center;min-height:2.6em;display:flex;align-items:flex-end;justify-content:center}
+.ig{display:block;width:min(100%,270px);border-radius:7px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+a.ig:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(185,255,80,.18)}
+.stack-cards{display:flex;flex-direction:column;gap:9px;align-items:center;width:100%}
+.creator-cards{display:grid;grid-template-columns:repeat(2,minmax(0,270px));gap:9px;justify-content:center;width:100%}
+.creator-cards .ig{width:100%}
+.creator-cards .ig:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:min(100%,270px)}
+
+/* PROJECTS FILMED */
+.region{margin-top:clamp(26px,3vw,40px)}
+.rlabel{display:flex;align-items:center;gap:18px;color:var(--lime);font-weight:600;font-size:clamp(15px,1.75vw,25px);text-transform:uppercase;margin-bottom:clamp(14px,1.6vw,22px)}
+.rlabel::after{content:"";flex:1;max-width:780px;height:1.5px;background:var(--lime-2)}
+.logos{list-style:none;display:flex;flex-wrap:wrap;align-items:center;row-gap:clamp(18px,2vw,28px)}
+.logos+.logos{margin-top:clamp(18px,2.2vw,30px)}
+.logos li{display:flex;align-items:center;padding:0 clamp(8px,1vw,14px);min-height:clamp(42px,4.4vw,64px);border-left:1.5px solid var(--lime-2)}
+.logos li:first-child{border-left:0;padding-left:0}
+.logos img{width:calc(var(--w) * 1px * var(--ls,1));max-width:none;height:auto}
+@media (max-width:1100px){.logos{--ls:.85}}
+@media (max-width:640px){.logos{--ls:.62}}
+
+/* CTA (slide 17) */
+.cta{position:relative;isolation:isolate;overflow:hidden;padding:clamp(56px,7vw,100px) clamp(16px,4vw,48px) clamp(28px,3vw,40px);
+  background:radial-gradient(ellipse 45% 55% at 100% 0%,rgba(74,44,152,.85),transparent 70%),radial-gradient(ellipse 40% 55% at 0% 100%,rgba(74,44,152,.6),transparent 70%),radial-gradient(ellipse 25% 30% at 0% 0%,rgba(40,120,40,.35),transparent 70%),#020203}
+.cta-in{max-width:var(--wrap);margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:clamp(20px,3vw,40px)}
+.cta .logo{width:clamp(180px,17vw,236px)}
+.cta h2{font-weight:700;font-size:clamp(30px,3.5vw,50px);line-height:1.12;margin:clamp(28px,4vw,56px) 0 0;letter-spacing:-.01em}
+.cta h2 em{font-style:normal;color:var(--lime)}
+.cta .rule{width:46px;height:2.5px;background:var(--lime);margin:clamp(24px,3vw,40px) 0}
+.call{display:flex;align-items:center;gap:clamp(14px,1.6vw,22px)}
+.call>img{width:clamp(44px,4vw,58px);flex:none}
+.call div{border-left:2px solid var(--lime);padding-left:clamp(12px,1.2vw,16px)}
+.call h3{font-weight:700;font-size:clamp(19px,1.9vw,27px);margin-bottom:6px}
+.call p{font-size:clamp(14px,1.3vw,18px);line-height:1.5;max-width:460px;color:#fff}
+.cta .btn{margin-top:clamp(22px,2.6vw,32px);font-size:15px;padding:13px 22px}
+.cta-visual img{width:100%;-webkit-mask-image:radial-gradient(closest-side at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(closest-side at 50% 50%,#000 62%,transparent 100%)}
+.contact{max-width:var(--wrap);margin:clamp(30px,4vw,56px) auto 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 24px;list-style:none;font-size:clamp(13px,1.15vw,16px);letter-spacing:.02em}
+.contact a{display:flex;align-items:center;gap:9px;text-decoration:none;opacity:.92}
+.contact a:hover{opacity:1;color:var(--lime)}
+.contact svg{width:20px;height:20px;flex:none;stroke:var(--lime);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+footer{background:#020203;color:rgba(255,255,255,.5);font-size:12px;text-align:center;padding:22px 16px 30px;border-top:1px solid rgba(255,255,255,.06)}
+footer a{text-decoration:none}
+
+/* REVEAL */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.phone,.ig{transition:none}}
+
+/* RESPONSIVE */
+@media (max-width:900px){
+  .who-grid{grid-template-columns:1fr 1fr}
+  .who .col:nth-child(2){grid-column:1/-1;order:-1}
+  .cta-in{grid-template-columns:1fr}
+  .cta-visual{order:-1;max-width:520px;margin:0 auto -10px}
+  .contact{justify-content:flex-start}
+}
+@media (max-width:640px){
+  .nav-links .hide-sm{display:none}
+  .nav .btn{padding:8px 14px;font-size:13px}
+  .hero{padding-top:58px}
+  .cities{justify-content:center;gap:6px 12px;padding:10px 12px}
+  .row{gap:28px 14px;justify-content:center}
+  .row.r3>.item,.row.r4>.item{width:calc(50% - 7px)}
+  .row.r3>.item:has(.land){width:100%}
+  .row.r2>.item.group{width:100%}
+  .phone{width:min(100%,190px)}
+  .phone.land{width:min(100%,360px)}
+  .group .phones .phone{width:min(46vw,170px)}
+  .group.stack .phones .phone{width:min(100%,360px)}
+  .who-grid{grid-template-columns:1fr}
+  .who .col:nth-child(2){order:0}
+  .creator-cards{grid-template-columns:1fr;max-width:300px;margin:0 auto}
+  .who .lbl{min-height:0}
+  .shead{gap:10px}
+  .contact{flex-direction:column}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="brand" href="/" aria-label="Social Smiths home"><img src="/portfolio/assets/logo.webp" width="1039" height="205" alt="Social Smiths"></a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="/" class="hide-sm">Home</a>
+    <a href="#who-we-work-with" class="hide-sm">Clients</a>
+    <a class="btn" href="https://wa.me/919005631414?text=Hi%20Social%20Smiths%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20a%20free%2020-minute%20call." target="_blank" rel="noopener">Book a free call</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" aria-label="Built to be seen">
+  <h1 class="sr-only">Social Smiths Portfolio — Built to Be Seen. Content, Influencers, Strategy, Visualization and Growth for real estate.</h1>
+  <img src="/portfolio/assets/hero.webp" width="2880" height="1620" fetchpriority="high" alt="Social Smiths — Built to Be Seen. Content: shoots, reels, carousels. Influencers: creator partnerships. Strategy: campaigns that convert. Visualization: AI-powered property films. Growth: audience, not just reach. 50+ projects across Mumbai, Dubai, Goa, Gurugram and Lonavala.">
+</section>
+
+<section class="about" id="who-we-are">
+  <div class="inner reveal">
+    <h2>Who we are</h2>
+    <p>Social Smiths is a creator-led marketing and film studio built for real estate. For over four years we've handled the entire journey, market study, positioning, script, shoot, edit, creators, campaigns and launch. Not pieces of it. <b>All of it.</b></p>
+    <p>Developers put years, capital and conviction into a project. Somewhere between the site and the screen, most of that gets lost. Our job is to do justice to what has actually been built, through a marketing strategy that thinks, and films that make the project impossible to ignore.</p>
+    <a class="site" href="/">socialsmiths.in</a>
+  </div>
+  <div class="cities"><span>Mumbai</span><i></i><span>Dubai</span><i></i><span>Gurugram</span><i></i><span>Delhi NCR</span><i></i><span>Goa</span><i></i><span>Lonavala</span></div>
+  <div class="about-foot"></div>
+</section>
+
+<section class="slide g-tr" id="under-construction"><div class="shead reveal"><img class="num" src="/portfolio/assets/num-1.webp" width="92" height="193" alt="1"><div><h2>If your project is under construction</h2><p class="sub">Under construction doesn't mean unmarketable. It means we shoot progress, promise and proof instead of interiors.</p><p class="hint">*Click on the image to view the videos</p></div></div><div class="row r3"><div class="item reveal"><h3 class="lbl">1. With a presenter</h3><a class="phone" href="https://instagram.com/reel/DZzym1pAH7h/" target="_blank" rel="noopener" aria-label="Watch: 1. With a presenter (opens Instagram)"><img src="/portfolio/assets/reel-p03-1.webp" width="510" height="954" alt="1. With a presenter — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><div class="item reveal"><h3 class="lbl">2. With a creator</h3><a class="phone" href="https://instagram.com/reel/DSb2auoiNDg/" target="_blank" rel="noopener" aria-label="Watch: 2. With a creator (opens Instagram)"><img src="/portfolio/assets/reel-p03-2.webp" width="510" height="954" alt="2. With a creator — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><p class="cap">Your project, seen through someone the market already follows.</p></div><div class="item reveal"><h3 class="lbl">3. If the show flat is ready</h3><a class="phone" href="https://instagram.com/reel/DbneDApMNun/" target="_blank" rel="noopener" aria-label="Watch: 3. If the show flat is ready (opens Instagram)"><img src="/portfolio/assets/reel-p03-3.webp" width="510" height="954" alt="3. If the show flat is ready — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><p class="cap">One finished flat exists. We shoot it like the whole project is done.</p></div></div><div class="row r4"><div class="item reveal"><h3 class="lbl">4. If nothing is ready, let AI handle it</h3><a class="phone" href="https://drive.google.com/file/d/1VHsjaV6FCoU2P2i6CcE0Va27zunmidev/view" target="_blank" rel="noopener" aria-label="Watch: 4. If nothing is ready, let AI handle it (opens Google Drive)"><img src="/portfolio/assets/reel-p04-1.webp" width="510" height="954" alt="4. If nothing is ready, let AI handle it — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><div class="item reveal"><h3 class="lbl">5. Silent walkthrough with music</h3><a class="phone" href="https://instagram.com/reel/Da2h8mVoSXa/" target="_blank" rel="noopener" aria-label="Watch: 5. Silent walkthrough with music (opens Instagram)"><img src="/portfolio/assets/reel-p04-2.webp" width="510" height="954" alt="5. Silent walkthrough with music — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><p class="cap">No talking, no text. Just the space, the light and a track.</p></div><div class="item reveal"><h3 class="lbl">6. Nothing, just drone</h3><a class="phone" href="https://instagram.com/reel/Dakg1g-O601/" target="_blank" rel="noopener" aria-label="Watch: 6. Nothing, just drone (opens Instagram)"><img src="/portfolio/assets/reel-p04-3.webp" width="510" height="954" alt="6. Nothing, just drone — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><p class="cap">No site access, no interiors, no crew. Just the tower and its context, from the air.</p></div><div class="item reveal"><h3 class="lbl">7. Let's make it viral</h3><a class="phone" href="https://www.instagram.com/reel/DQ6mUdWj5YV/" target="_blank" rel="noopener" aria-label="Watch: 7. Let&#x27;s make it viral (opens Instagram)"><img src="/portfolio/assets/reel-p04-4.webp" width="524" height="976" alt="7. Let&#x27;s make it viral — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div></div></section>
+<section class="slide " id="ready-to-move-in"><div class="shead reveal"><img class="num" src="/portfolio/assets/num-2.webp" width="133" height="194" alt="2"><div><h2>If your project is ready to move in</h2><p class="sub">Possession stage is where most brands stop making content. It's actually where the strongest content is.</p></div></div><div class="row r3"><div class="item reveal"><h3 class="lbl">1. With a presenter</h3><a class="phone" href="https://instagram.com/reel/DXy4YKsMJwL/" target="_blank" rel="noopener" aria-label="Watch: 1. With a presenter (opens Instagram)"><img src="/portfolio/assets/reel-p05-1.webp" width="510" height="954" alt="1. With a presenter — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><p class="cap">Guided, informative, conversion-focused.</p></div><div class="item reveal"><h3 class="lbl">2. Nothing, just drone</h3><a class="phone" href="https://instagram.com/reel/DO_AKCLkv37/" target="_blank" rel="noopener" aria-label="Watch: 2. Nothing, just drone (opens Instagram)"><img src="/portfolio/assets/reel-p05-2.webp" width="510" height="954" alt="2. Nothing, just drone — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><div class="item reveal"><h3 class="lbl">3. Drone mapping film</h3><a class="phone" href="https://instagram.com/reel/DZcahvVIc1L/" target="_blank" rel="noopener" aria-label="Watch: 3. Drone mapping film (opens Instagram)"><img src="/portfolio/assets/reel-p05-3.webp" width="510" height="954" alt="3. Drone mapping film — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><p class="cap">The full site plotted from the air, layout, towers, approach, surroundings.</p></div></div></section>
+<section class="slide g-bl" id="realtors"><div class="shead reveal"><img class="num" src="/portfolio/assets/num-3.webp" width="138" height="198" alt="3"><div><h2>Not a developer? You're a realtor.<br>Same standard.</h2></div></div><div class="row r3"><div class="item reveal"><h3 class="lbl">1. Bandra West</h3><a class="phone" href="https://www.instagram.com/reel/DIyeVhTt57d/" target="_blank" rel="noopener" aria-label="Watch: 1. Bandra West (opens Instagram)"><img src="/portfolio/assets/reel-p06-1.webp" width="510" height="954" alt="1. Bandra West — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><div class="item reveal"><h3 class="lbl">2. Palm Jumeirah, Dubai</h3><a class="phone" href="https://drive.google.com/file/d/1ukO4wBPr1hjcWljnBxdBsDUjGnjoGp8p/view" target="_blank" rel="noopener" aria-label="Watch: 2. Palm Jumeirah, Dubai (opens Google Drive)"><img src="/portfolio/assets/reel-p06-2.webp" width="510" height="954" alt="2. Palm Jumeirah, Dubai — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><div class="item reveal"><h3 class="lbl">3. Lonavala</h3><a class="phone" href="https://www.instagram.com/reel/DZebGPqMv3L/" target="_blank" rel="noopener" aria-label="Watch: 3. Lonavala (opens Instagram)"><img src="/portfolio/assets/reel-p06-3.webp" width="510" height="954" alt="3. Lonavala — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div></div></section>
+<section class="slide " id="villas"><div class="shead reveal"><img class="num" src="/portfolio/assets/num-4.webp" width="141" height="192" alt="4"><div><h2>Villas &amp; second homes</h2></div></div><div class="row r3"><div class="item reveal"><h3 class="lbl">1. Cinematic villa film</h3><a class="phone" href="https://drive.google.com/file/d/1QbplAi02vSpWxs-S_v2Dch5pUoR3SFK8/view" target="_blank" rel="noopener" aria-label="Watch: 1. Cinematic villa film (opens Google Drive)"><img src="/portfolio/assets/reel-p07-1.webp" width="510" height="954" alt="1. Cinematic villa film — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><p class="cap">Shekhawati villas</p></div><div class="item reveal"><h3 class="lbl">2. AI villa film</h3><a class="phone" href="https://instagram.com/reel/DO_AKCLkv37/" target="_blank" rel="noopener" aria-label="Watch: 2. AI villa film (opens Instagram)"><img src="/portfolio/assets/reel-p07-2.webp" width="510" height="954" alt="2. AI villa film — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><p class="cap">Villa abhi bana nahi hai?<br>Drawings se poori film ban jaati hai.</p></div><div class="item reveal"><h3 class="lbl">3. Short ad film</h3><a class="phone" href="https://instagram.com/reel/DZcahvVIc1L/" target="_blank" rel="noopener" aria-label="Watch: 3. Short ad film (opens Instagram)"><img src="/portfolio/assets/reel-p07-3.webp" width="510" height="954" alt="3. Short ad film — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><p class="cap">Built to run as a paid ad, not just a post.</p></div></div></section>
+<section class="slide g-tr-lime" id="luxury"><div class="shead reveal"><img class="num" src="/portfolio/assets/num-5.webp" width="138" height="194" alt="5"><div><h2>Let luxury<br>sound loud</h2></div></div><div class="row r3"><div class="item reveal"><h3 class="lbl">1. Dubai</h3><a class="phone" href="https://drive.google.com/file/d/127QV1uAtjVnjK1K4ASA2ZVLOv7X4KO46/view" target="_blank" rel="noopener" aria-label="Watch: 1. Dubai (opens Google Drive)"><img src="/portfolio/assets/reel-p08-1.webp" width="510" height="954" alt="1. Dubai — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><div class="item reveal"><h3 class="lbl">2. Lonavala</h3><a class="phone" href="https://drive.google.com/file/d/1eVyU40hc7pTOxT2Ocw9nxOcI9YoQfmg8/view" target="_blank" rel="noopener" aria-label="Watch: 2. Lonavala (opens Google Drive)"><img src="/portfolio/assets/reel-p08-2.webp" width="510" height="954" alt="2. Lonavala — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><div class="item reveal"><h3 class="lbl">3. Gurugram</h3><a class="phone" href="https://instagram.com/reel/DUqAXFXjBzy/" target="_blank" rel="noopener" aria-label="Watch: 3. Gurugram (opens Instagram)"><img src="/portfolio/assets/reel-p08-3.webp" width="510" height="954" alt="3. Gurugram — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div></div></section>
+<section class="slide " id="education"><div class="shead reveal"><img class="num" src="/portfolio/assets/num-6.webp" width="126" height="170" alt="6"><div><h2>Education content</h2><p class="sub">The content that makes people follow a real estate page<br>Property content sells once. Education content makes people come back, and come back trusting you.</p></div></div><div class="row r3"><div class="item reveal"><a class="phone" href="https://instagram.com/reel/DbIj7rXul6c/" target="_blank" rel="noopener" aria-label="Watch: Reel (opens Instagram)"><img src="/portfolio/assets/reel-p09-1.webp" width="510" height="954" alt="Reel — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><div class="item reveal"><a class="phone" href="https://www.instagram.com/reel/DWbZupmjFqu/" target="_blank" rel="noopener" aria-label="Watch: Reel (opens Instagram)"><img src="/portfolio/assets/reel-p09-2.webp" width="510" height="954" alt="Reel — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><div class="item reveal"><h3 class="lbl">Masterclass</h3><a class="phone land" href="https://www.youtube.com/@rk.ravikewalramani/courses" target="_blank" rel="noopener" aria-label="Watch: Masterclass (opens YouTube)"><img src="/portfolio/assets/reel-p09-3.webp" width="954" height="510" alt="Masterclass — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div></div></section>
+<section class="slide g-tr-lime" id="brand-ip"><div class="shead reveal"><img class="num" src="/portfolio/assets/num-7.webp" width="108" height="168" alt="7"><div><h2>Own a brand IP</h2><p class="sub">A post dies at midnight, but a recurring series, same format, same face, new episode, compounds into an IP the audience returns for and the brand benefits from.</p></div></div><div class="row r2"><div class="item group  reveal"><h3 class="lbl">IP 1. DOMO Decodes</h3><div class="phones"><a class="phone" href="https://www.instagram.com/reel/DbTCdAfsk4v/" target="_blank" rel="noopener" aria-label="Watch: IP 1. DOMO Decodes 1 (opens Instagram)"><img src="/portfolio/assets/reel-p10-1.webp" width="510" height="954" alt="IP 1. DOMO Decodes 1 — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><a class="phone" href="https://www.instagram.com/reel/DbalhZdA-l1/" target="_blank" rel="noopener" aria-label="Watch: IP 1. DOMO Decodes 2 (opens Instagram)"><img src="/portfolio/assets/reel-p10-2.webp" width="510" height="954" alt="IP 1. DOMO Decodes 2 — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><p class="cap">Real estate explained by a developer's own brand</p></div><div class="item group  reveal"><h3 class="lbl">IP 2. Per Square Ft.</h3><div class="phones"><a class="phone" href="https://instagram.com/reel/DPvSbpSiDrI/" target="_blank" rel="noopener" aria-label="Watch: IP 2. Per Square Ft. 1 (opens Instagram)"><img src="/portfolio/assets/reel-p10-3.webp" width="510" height="954" alt="IP 2. Per Square Ft. 1 — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><a class="phone" href="https://instagram.com/reel/DP6KjraiJvt/" target="_blank" rel="noopener" aria-label="Watch: IP 2. Per Square Ft. 2 (opens Instagram)"><img src="/portfolio/assets/reel-p10-4.webp" width="510" height="954" alt="IP 2. Per Square Ft. 2 — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><p class="cap">The full site plotted from the air, layout, towers, approach, surroundings.</p></div></div><div class="row r2"><div class="item reveal"><h3 class="lbl">IP 3. Build your own faceless viral page</h3><a class="phone" href="https://instagram.com/resrv.estates/" target="_blank" rel="noopener" aria-label="Watch: IP 3. Build your own faceless viral page (opens Instagram)"><img src="/portfolio/assets/reel-p11-1.webp" width="510" height="954" alt="IP 3. Build your own faceless viral page — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><div class="item group stack reveal"><h3 class="lbl">IP 4. Podcast IP — Leaders Roundtable</h3><div class="phones"><a class="phone land" href="https://youtube.com/@rk.ravikewalramani/podcasts" target="_blank" rel="noopener" aria-label="Watch: IP 4. Podcast IP — Leaders Roundtable 1 (opens YouTube)"><img src="/portfolio/assets/reel-p11-2.webp" width="954" height="510" alt="IP 4. Podcast IP — Leaders Roundtable 1 — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><a class="phone land" href="https://youtu.be/fefGJqoqMZg" target="_blank" rel="noopener" aria-label="Watch: IP 4. Podcast IP — Leaders Roundtable 2 (opens YouTube)"><img src="/portfolio/assets/reel-p11-3.webp" width="952" height="509" alt="IP 4. Podcast IP — Leaders Roundtable 2 — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><p class="cap">Long-form authority content with the industry's own names.</p></div></div></section>
+<section class="slide g-tr" id="influencer-campaigns"><div class="shead reveal"><img class="num" src="/portfolio/assets/num-8.webp" width="124" height="171" alt="8"><div><h2>Influencer campaigns</h2><p class="sub">Anyone can run an influencer campaign. Very few run a good one.</p><p class="sub lime">One project, multiple stories</p></div></div><div class="row r4"><div class="item reveal"><a class="phone" href="https://instagram.com/reel/Db8KzhnM20U/" target="_blank" rel="noopener" aria-label="Watch: Realtor angle, Ravi Kewalramani (opens Instagram)"><img src="/portfolio/assets/reel-p12-1.webp" width="510" height="954" alt="Realtor angle, Ravi Kewalramani — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><p class="cap">Realtor angle, Ravi Kewalramani</p></div><div class="item reveal"><a class="phone" href="https://instagram.com/reel/DcAxOLJB7hg/" target="_blank" rel="noopener" aria-label="Watch: Pet creator (opens Instagram)"><img src="/portfolio/assets/reel-p12-2.webp" width="510" height="954" alt="Pet creator — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><p class="cap">Pet creator</p></div><div class="item reveal"><a class="phone" href="https://instagram.com/reel/DciusnPoDPF/" target="_blank" rel="noopener" aria-label="Watch: Viral hook (opens Instagram)"><img src="/portfolio/assets/reel-p12-3.webp" width="510" height="954" alt="Viral hook — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><p class="cap">Viral hook</p></div><div class="item reveal"><a class="phone" href="https://instagram.com/reel/DcvlpIUpI_S/" target="_blank" rel="noopener" aria-label="Watch: Branding angle (opens Instagram)"><img src="/portfolio/assets/reel-p12-4.webp" width="510" height="954" alt="Branding angle — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a><p class="cap">Branding angle</p></div></div></section>
+<section class="slide g-both" id="ai-reels"><div class="shead reveal"><img class="num" src="/portfolio/assets/num-9.webp" width="121" height="170" alt="9"><div><h2>AI reels</h2><p class="sub">We turn plans, renders and bold concepts into AI-powered reels that help buyers picture what’s possible.</p></div></div><div class="row r2"><div class="item reveal"><h3 class="lbl">1. AI Reel 01</h3><a class="phone" href="https://drive.google.com/file/d/1QEY8SbmmaA_w8SWKa-ZIvt1AdsMhL8D0/view" target="_blank" rel="noopener" aria-label="Watch: 1. AI Reel 01 (opens Google Drive)"><img src="/portfolio/assets/reel-p13-1.webp" width="510" height="954" alt="1. AI Reel 01 — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div><div class="item reveal"><h3 class="lbl">2. AI Reel 02</h3><a class="phone" href="https://drive.google.com/file/d/1VHsjaV6FCoU2P2i6CcE0Va27zunmidev/view" target="_blank" rel="noopener" aria-label="Watch: 2. AI Reel 02 (opens Google Drive)"><img src="/portfolio/assets/reel-p13-2.webp" width="510" height="954" alt="2. AI Reel 02 — Social Smiths real estate video" loading="lazy" decoding="async"><span class="play" aria-hidden="true"></span></a></div></div></section>
+<section class="slide who g-none" id="who-we-work-with">
+<h2 class="big reveal">Who we<br>work with</h2>
+<div class="who-grid">
+<div class="col reveal"><h3 class="lbl">Brand clients</h3><div class="stack-cards"><a class="ig" href="https://www.instagram.com/shekhawativillas/" target="_blank" rel="noopener"><img src="/portfolio/assets/ig-1.webp" width="803" height="310" alt="Instagram profile of Shekhawati Villas" loading="lazy" decoding="async"></a><a class="ig" href="https://www.instagram.com/stay.mystic/" target="_blank" rel="noopener"><img src="/portfolio/assets/ig-2.webp" width="803" height="324" alt="Instagram profile of Stay Mystic villas" loading="lazy" decoding="async"></a><a class="ig" href="https://www.instagram.com/groupshreekrishna/" target="_blank" rel="noopener"><img src="/portfolio/assets/ig-3.webp" width="803" height="312" alt="Instagram profile of Shree Krishna Group" loading="lazy" decoding="async"></a><a class="ig" href="https://www.instagram.com/domo.realestate/" target="_blank" rel="noopener"><img src="/portfolio/assets/ig-4.webp" width="803" height="302" alt="Instagram profile of DOMO Mumbai Real Estate" loading="lazy" decoding="async"></a></div></div>
+<div class="col reveal"><h3 class="lbl">Creator clients</h3><div class="creator-cards"><a class="ig" href="https://www.instagram.com/rk.ravikewalramani/" target="_blank" rel="noopener"><img src="/portfolio/assets/ig-5.webp" width="802" height="303" alt="Instagram profile of Ravi Kewalramani" loading="lazy" decoding="async"></a><a class="ig" href="https://www.instagram.com/realestatewithmayank/" target="_blank" rel="noopener"><img src="/portfolio/assets/ig-9.webp" width="802" height="302" alt="Instagram profile of Mayank Agarwal" loading="lazy" decoding="async"></a><span class="ig"><img src="/portfolio/assets/ig-6.webp" width="802" height="317" alt="Instagram profile of Eeshikka D Bhagtani" loading="lazy" decoding="async"></span><a class="ig" href="https://www.instagram.com/luxuryresidencesgurgaon/" target="_blank" rel="noopener"><img src="/portfolio/assets/ig-10.webp" width="802" height="311" alt="Instagram profile of Luxury Residences by Dhruv Saini" loading="lazy" decoding="async"></a><a class="ig" href="https://www.instagram.com/realtorsnextdoor/" target="_blank" rel="noopener"><img src="/portfolio/assets/ig-7.webp" width="802" height="321" alt="Instagram profile of Realtors Next Door" loading="lazy" decoding="async"></a><a class="ig" href="https://www.instagram.com/therealityofrealestate_/" target="_blank" rel="noopener"><img src="/portfolio/assets/ig-11.webp" width="817" height="321" alt="Instagram profile of Jagdish Khadtare" loading="lazy" decoding="async"></a><a class="ig" href="https://www.instagram.com/rafiquemerchant/" target="_blank" rel="noopener"><img src="/portfolio/assets/ig-8.webp" width="803" height="306" alt="Instagram profile of Rafique Merchant" loading="lazy" decoding="async"></a></div></div>
+<div class="col reveal"><h3 class="lbl">Trusted by real estate<br>brands for production</h3><div class="stack-cards"><a class="ig" href="https://www.instagram.com/woods_by_doodlehomes/" target="_blank" rel="noopener"><img src="/portfolio/assets/ig-12.webp" width="803" height="306" alt="Instagram profile of Woods by Doodle Homes" loading="lazy" decoding="async"></a><a class="ig" href="https://www.instagram.com/thepropertist/" target="_blank" rel="noopener"><img src="/portfolio/assets/ig-13.webp" width="803" height="307" alt="Instagram profile of The Propertist" loading="lazy" decoding="async"></a><a class="ig" href="https://www.instagram.com/alyf.in/" target="_blank" rel="noopener"><img src="/portfolio/assets/ig-14.webp" width="803" height="295" alt="Instagram profile of ALYF" loading="lazy" decoding="async"></a></div></div>
+</div></section>
+<section class="slide filmed g-purple" id="projects-filmed">
+<h2 class="big reveal">Projects and partnerships<br><span class="white">we've filmed</span></h2>
+<div class="region"><h3 class="rlabel reveal"><span>Mumbai &amp; MMR</span></h3><ul class="logos reveal"><li><img src="/portfolio/assets/logo-mumbai1-1.webp" alt="K Raheja Corp" style="--w:87" width="260" height="337" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-mumbai1-2.webp" alt="Shree Krishna Group" style="--w:146" width="437" height="236" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-mumbai1-3.webp" alt="Kohinoor Square" style="--w:73" width="219" height="303" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-mumbai1-4.webp" alt="Four Seasons" style="--w:166" width="498" height="231" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-mumbai1-5.webp" alt="DLH" style="--w:124" width="371" height="109" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-mumbai1-6.webp" alt="Kalpataru Parkcity Thane" style="--w:179" width="537" height="193" loading="lazy" decoding="async"></li></ul><ul class="logos reveal"><li><img src="/portfolio/assets/logo-mumbai2-1.webp" alt="Aspect Realty" style="--w:179" width="538" height="113" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-mumbai2-2.webp" alt="Supreme" style="--w:140" width="420" height="169" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-mumbai2-3.webp" alt="Lodha" style="--w:168" width="503" height="69" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-mumbai2-4.webp" alt="Parinee" style="--w:129" width="387" height="164" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-mumbai2-5.webp" alt="Oberoi Realty" style="--w:125" width="374" height="175" loading="lazy" decoding="async"></li></ul></div><div class="region"><h3 class="rlabel reveal"><span>Dubai</span></h3><ul class="logos reveal"><li><img src="/portfolio/assets/logo-dubai-1.webp" alt="Palm Jumeirah Dubai" style="--w:92" width="275" height="367" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-dubai-2.webp" alt="Damac Hills" style="--w:133" width="400" height="148" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-dubai-3.webp" alt="One Za’abeel" style="--w:189" width="567" height="51" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-dubai-4.webp" alt="Bugatti Residences" style="--w:131" width="393" height="263" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-dubai-5.webp" alt="Serenia" style="--w:95" width="286" height="290" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-dubai-6.webp" alt="Emaar" style="--w:121" width="362" height="74" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-dubai-7.webp" alt="Atlantis The Royal Dubai" style="--w:153" width="460" height="292" loading="lazy" decoding="async"></li></ul></div><div class="region"><h3 class="rlabel reveal"><span>Gurugram &amp; Delhi NCR</span></h3><ul class="logos reveal"><li><img src="/portfolio/assets/logo-gurugram-1.webp" alt="M3M IFC" style="--w:87" width="261" height="195" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-gurugram-2.webp" alt="The Amaryllis Central Delhi" style="--w:135" width="406" height="189" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-gurugram-3.webp" alt="Sobha Realty" style="--w:161" width="483" height="158" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-gurugram-4.webp" alt="Godrej Properties" style="--w:180" width="541" height="117" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-gurugram-5.webp" alt="The Westin Residences Gurugram" style="--w:149" width="447" height="153" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-gurugram-6.webp" alt="DLF" style="--w:126" width="379" height="134" loading="lazy" decoding="async"></li></ul></div><div class="region"><h3 class="rlabel reveal"><span>Lonavala, Khandala &amp; Igatpuri</span></h3><ul class="logos reveal"><li><img src="/portfolio/assets/logo-lonavala-1.webp" alt="Amarja Hills Pawna Dam Lonavala" style="--w:182" width="545" height="190" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-lonavala-2.webp" alt="Shekhawati Villas" style="--w:164" width="492" height="200" loading="lazy" decoding="async"></li><li><img src="/portfolio/assets/logo-lonavala-3.webp" alt="Aamby Valley City" style="--w:150" width="451" height="241" loading="lazy" decoding="async"></li></ul></div><div class="region"><h3 class="rlabel reveal"><span>Media partnership</span></h3><ul class="logos reveal"><li><img src="/portfolio/assets/logo-midday-1.webp" alt="Mid-day Hot Property Exhibition" style="--w:240" width="720" height="248" loading="lazy" decoding="async"></li></ul></div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="cta-in">
+    <div class="reveal">
+      <img class="logo" src="/portfolio/assets/logo.webp" width="1039" height="205" alt="Social Smiths — Marketing and Creative Studio" loading="lazy">
+      <h2>Tell us your goal. We’ll build your <em>content plan</em></h2>
+      <div class="rule"></div>
+      <div class="call">
+        <img src="/portfolio/assets/icon-calendar.webp" width="213" height="212" alt="" loading="lazy">
+        <div>
+          <h3>A free 20-minute call.</h3>
+          <p>We'll look at your page, your competition and your project stage, and give you the plan for the next 30 days.</p>
+        </div>
+      </div>
+      <a class="btn" href="https://wa.me/919005631414?text=Hi%20Social%20Smiths%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20a%20free%2020-minute%20call." target="_blank" rel="noopener">Book your free call →</a>
+    </div>
+    <div class="cta-visual reveal"><img src="/portfolio/assets/cta-visual.webp" width="1301" height="910" alt="" loading="lazy" decoding="async"></div>
+  </div>
+  <ul class="contact">
+    <li><a href="/"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg>socialsmiths.in</a></li>
+    <li><a href="mailto:info@socialsmiths.in"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>info@socialsmiths.in</a></li>
+    <li><a href="tel:+919005631414"><svg viewBox="0 0 24 24"><path d="M5 4h3.5l1.6 4.2-2.2 1.4a11 11 0 0 0 6.5 6.5l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16 16 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></svg>+91 90056 31414</a></li>
+    <li><a href="tel:+919324997018"><svg viewBox="0 0 24 24"><path d="M5 4h3.5l1.6 4.2-2.2 1.4a11 11 0 0 0 6.5 6.5l1.4-2.2L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16 16 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></svg>+91 93249 97018</a></li>
+    <li><a href="https://www.instagram.com/socialsmiths_/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="#B9FF50"/></svg>@socialsmiths_</a></li>
+  </ul>
+</section>
+</main>
+
+<footer>© <span id="yr">2026</span> SOCIALSMITHS LLP · Ghatkopar West, Mumbai · <a href="/">socialsmiths.in</a></footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>40)}
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  els.forEach(function(e,i){var row=e.parentElement;var idx=Array.prototype.indexOf.call(row.children,e);e.style.transitionDelay=(Math.min(idx,4)*90)+'ms';io.observe(e)});
+})();
+</script>
+</body>
+</html>

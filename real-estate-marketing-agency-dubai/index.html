@@ -328,9 +328,9 @@
   /* ---- footer (matches homepage footer exactly) ---- */
   footer.site{padding:44px 0;background:#0a0a0a;border-top:1px solid var(--line)}
   .f-inner{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:20px}
-  .f-logo{height:26px}
-  .f-links{display:flex;gap:24px;flex-wrap:wrap}
-  .f-links a{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#8a8a8a;text-decoration:none;transition:color .2s}
+  .f-logo{display:block;height:48px;width:auto}
+  .f-links{display:grid;grid-template-columns:repeat(3,auto);gap:0 56px}.f-col{display:flex;flex-direction:column;align-items:flex-start}.f-head{margin-bottom:8px;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--lime)}.f-links a.f-mail{font-size:12px;letter-spacing:.3px;text-transform:none}@media (max-width:860px){.f-links{width:100%}}@media (max-width:600px){.f-links{grid-template-columns:1fr 1fr;gap:28px 20px}.f-connect{grid-column:1/-1}}
+  .f-links a{padding:7px 0;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#8a8a8a;text-decoration:none;transition:color .2s}
   .f-links a:hover{color:var(--lime)}
   .f-copy{font-size:10px;color:#7a7a7a}
   .f-nap{font-size:13px;color:var(--lavender);margin-top:14px;max-width:44ch}
@@ -560,20 +560,30 @@
   <div class="wrap">
     <div class="f-inner">
       <div>
-        <img class="f-logo" src="../Pics/footer-logo.webp" alt="Social Smiths">
+        <img class="f-logo" src="../Pics/logo-nav.webp" width="54" height="54" alt="Social Smiths">
         <div class="f-nap">712, 86 Central A, Andheri Ghatkopar Link Road, Near Shreyas Signal, Ghatkopar West, Mumbai 400086 &nbsp;·&nbsp; <a href="tel:+919005631414">+91 90056 31414</a></div>
       </div>
-      <div class="f-links">
-        <a href="../about/">About</a>
-        <a href="https://socialsmiths.in/#services">Services</a>
-        <a href="https://socialsmiths.in/#work">Work</a>
-        <a href="../real-estate-marketing-agency-mumbai/">Real Estate Marketing Mumbai</a>
-        <a href="../real-estate-marketing-agency-delhi-ncr/">Real Estate Marketing Delhi NCR</a>
-        <a href="../real-estate-marketing-agency-pune/">Real Estate Marketing Pune &amp; Lonavala</a>
-        <a href="../real-estate-marketing-agency-indore/">Real Estate Marketing Indore</a>
-        <a href="../real-estate-marketing-agency-goa/">Real Estate Marketing Goa</a>
-        <a href="../real-estate-marketing-agency-coimbatore/">Real Estate Marketing Coimbatore</a>
-        <a href="https://www.instagram.com/shotbybrendan_/" target="_blank" rel="noopener">Instagram &#8599;</a>
+      <div class="f-links" role="navigation" aria-label="Footer">
+        <div class="f-col">
+          <span class="f-head">Explore</span>
+          <a href="../about/">About</a>
+          <a href="https://socialsmiths.in/#services">Services</a>
+          <a href="https://socialsmiths.in/#work">Work</a>
+        </div>
+        <div class="f-col">
+          <span class="f-head">Locations</span>
+          <a href="../real-estate-marketing-agency-mumbai/">Mumbai</a>
+          <a href="../real-estate-marketing-agency-delhi-ncr/">Delhi NCR</a>
+          <a href="../real-estate-marketing-agency-pune/">Pune &amp; Lonavala</a>
+          <a href="../real-estate-marketing-agency-indore/">Indore</a>
+          <a href="../real-estate-marketing-agency-goa/">Goa</a>
+          <a href="../real-estate-marketing-agency-coimbatore/">Coimbatore</a>
+        </div>
+        <div class="f-col f-connect">
+          <span class="f-head">Connect</span>
+          <a class="f-mail" href="mailto:info@socialsmiths.in">info@socialsmiths.in</a>
+          <a href="https://www.instagram.com/shotbybrendan_/" target="_blank" rel="noopener">Instagram &#8599;</a>
+        </div>
       </div>
     </div>
     <div class="f-inner" style="margin-top:18px">

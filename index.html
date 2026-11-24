@@ -1262,13 +1262,6 @@
       white-space: nowrap;
     }
 
-    @media (max-width:960px) {
-      .f-links a {
-        display: inline-block;
-        padding: 15px 4px;
-      }
-    }
-
     /* ═══ NUMBERS ═══ */
     #numbers {
       background: var(--lime);
@@ -1899,30 +1892,54 @@
 
     /* ═══ FOOTER ═══ */
     footer {
-      padding: 44px 56px;
+      padding: 56px 56px 28px;
       background: var(--off);
       border-top: 1px solid var(--border);
     }
 
     .f-inner {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 40px 64px;
     }
 
     .f-logo {
-      height: 30px;
+      display: block;
+      height: 52px;
+      width: auto;
+    }
+
+    .f-tag {
+      margin-top: 14px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: #8a8a8a;
     }
 
     .f-links {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 0 64px;
+    }
+
+    .f-col {
       display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .f-head {
+      margin-bottom: 8px;
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--lime);
     }
 
     .f-links a {
+      padding: 7px 0;
       font-size: 10px;
       letter-spacing: 2.5px;
       text-transform: uppercase;
@@ -1930,11 +1947,21 @@
       transition: color .2s;
     }
 
+    .f-links a.f-mail {
+      font-size: 12px;
+      letter-spacing: .3px;
+      text-transform: none;
+    }
+
     .f-links a:hover {
       color: var(--lime);
     }
 
     .f-copy {
+      display: block;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
       font-size: 10px;
       color: #7a7a7a; /* was rgba(84,84,84,.5); raised for WCAG AA contrast */
     }
@@ -2042,12 +2069,12 @@
       }
 
       footer {
-        padding: 36px 28px;
+        padding: 44px 28px 24px;
       }
 
       .f-inner {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 32px;
       }
     }
 
@@ -2105,7 +2132,17 @@
       }
 
       footer {
-        padding: 28px 20px;
+        padding: 40px 20px 24px;
+      }
+
+      .f-links {
+        width: 100%;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 20px;
+      }
+
+      .f-connect {
+        grid-column: 1 / -1;
       }
     }
 
@@ -3238,29 +3275,40 @@
   <!-- FOOTER -->
   <footer>
     <div class="f-inner">
-      <img class="f-logo"
-        src="Pics/footer-logo.webp"
-        alt="Social Smiths">
-      <div class="f-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#testimonials">Clients</a>
-        <a href="#contact">Contact</a>
-        <a href="about/">Our Founders</a>
-        <a href="portfolio/">Portfolio</a>
-        <a href="real-estate-marketing-agency-mumbai/">Real Estate Marketing Mumbai</a>
-        <a href="real-estate-marketing-agency-dubai/">Real Estate Marketing Dubai</a>
-        <a href="real-estate-marketing-agency-delhi-ncr/">Real Estate Marketing Delhi NCR</a>
-        <a href="real-estate-marketing-agency-pune/">Real Estate Marketing Pune &amp; Lonavala</a>
-        <a href="real-estate-marketing-agency-indore/">Real Estate Marketing Indore</a>
-        <a href="real-estate-marketing-agency-goa/">Real Estate Marketing Goa</a>
-        <a href="real-estate-marketing-agency-coimbatore/">Real Estate Marketing Coimbatore</a>
-        <a href="how-to-choose-a-real-estate-marketing-agency-mumbai/">Choosing an Agency</a>
-        <a href="https://www.instagram.com/socialsmiths_" target="_blank" rel="noopener">Instagram &#8599;</a>
+      <div class="f-brand">
+        <img class="f-logo" src="Pics/logo-nav.webp" width="54" height="54" alt="Social Smiths">
+        <p class="f-tag">Real estate marketing agency.<br>Ghatkopar West, Mumbai.</p>
       </div>
-      <span class="f-copy">&copy; 2026 Social Smiths&trade; - All Rights Reserved</span>
+      <div class="f-links" role="navigation" aria-label="Footer">
+        <div class="f-col">
+          <span class="f-head">Explore</span>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#testimonials">Clients</a>
+          <a href="#contact">Contact</a>
+          <a href="about/">Our Founders</a>
+          <a href="portfolio/">Portfolio</a>
+          <a href="how-to-choose-a-real-estate-marketing-agency-mumbai/">Choosing an Agency</a>
+        </div>
+        <div class="f-col">
+          <span class="f-head">Locations</span>
+          <a href="real-estate-marketing-agency-mumbai/">Mumbai</a>
+          <a href="real-estate-marketing-agency-dubai/">Dubai</a>
+          <a href="real-estate-marketing-agency-delhi-ncr/">Delhi NCR</a>
+          <a href="real-estate-marketing-agency-pune/">Pune &amp; Lonavala</a>
+          <a href="real-estate-marketing-agency-indore/">Indore</a>
+          <a href="real-estate-marketing-agency-goa/">Goa</a>
+          <a href="real-estate-marketing-agency-coimbatore/">Coimbatore</a>
+        </div>
+        <div class="f-col f-connect">
+          <span class="f-head">Connect</span>
+          <a class="f-mail" href="mailto:info@socialsmiths.in">info@socialsmiths.in</a>
+          <a href="https://www.instagram.com/socialsmiths_" target="_blank" rel="noopener">Instagram &#8599;</a>
+        </div>
+      </div>
     </div>
+    <span class="f-copy">&copy; 2026 Social Smiths&trade; - All Rights Reserved</span>
   </footer>
 
   <script>

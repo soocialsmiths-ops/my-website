@@ -3601,57 +3601,8 @@
       };
     })();
 
-    // ── SCROLL RESISTANCE (desktop wheel only) ──
-    // Damps raw wheel input through an eased lerp instead of letting the
-    // page jump straight to the native scroll delta — makes the whole site
-    // feel heavier/slower to scroll through. Native window.scrollY is still
-    // the source of truth every frame, so ScrollTrigger / the frame-canvas
-    // scroll-scrub logic downstream need no changes.
-    (function () {
-      if (window.matchMedia('(pointer: coarse)').matches) return; // leave touch momentum alone
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      // TEMP test switch: add ?native to the URL to compare with the browser's own scrolling
-      if (new URLSearchParams(location.search).has('native')) return;
-
-      const WHEEL_SCALE = 0.7; // <1 = slower than the raw wheel delta
-      const DAMP = 0.26;       // lower = more lag/resistance; higher = snappier response
-
-      let target = window.scrollY;
-      let current = window.scrollY;
-
-      function maxScroll() {
-        return document.documentElement.scrollHeight - window.innerHeight;
-      }
-
-      function onWheel(e) {
-        e.preventDefault();
-        target = Math.min(Math.max(target + e.deltaY * WHEEL_SCALE, 0), maxScroll());
-      }
-
-      // Resync instantly on keyboard / scrollbar / anchor-link jumps so we
-      // never fight a scroll the user (or the browser) initiated another way.
-      function onScroll() {
-        if (Math.abs(window.scrollY - current) > 2) {
-          target = window.scrollY;
-          current = window.scrollY;
-        }
-      }
-
-      function raf() {
-        requestAnimationFrame(raf);
-        if (Math.abs(target - current) < 0.3) { current = target; return; }
-        current += (target - current) * DAMP;
-        // 'instant' is required: 'auto' defers to the CSS scroll-behavior,
-        // which is `smooth` on this site — that made every frame start a new
-        // browser smooth-scroll animation, so the page barely moved.
-        window.scrollTo({ top: current, left: 0, behavior: 'instant' });
-      }
-
-      window.addEventListener('wheel', onWheel, { passive: false });
-      window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', () => { target = Math.min(target, maxScroll()); });
-      requestAnimationFrame(raf);
-    })();
+    // (Desktop "scroll resistance" wheel easing removed 2026-11-24: native
+    // scrolling felt smoother on laptop trackpads.)
 
     // ── NAV SCROLL ──
     ScrollTrigger.create({

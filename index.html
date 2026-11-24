@@ -2191,60 +2191,42 @@
       background: radial-gradient(120% 90% at 50% 30%, #1a1f16 0%, #0c0d0a 55%, var(--black) 100%);
     }
 
-    .ss-loading-mark {
-      position: absolute;
+    /* ── PIXEL HAMMER LOADER ── full-screen intro shown until the first hero
+       frame is ready: one lime pixel blinks, the logo's pixel hammer forms from
+       the centre out, then the screen dissolves into the site in fine pixel grain. */
+    #ss-loader {
+      position: fixed;
       inset: 0;
-      z-index: 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 18px;
-      opacity: 1;
-      transition: opacity .5s ease;
+      z-index: 10000;
+      background: #0a0a0a;
       pointer-events: none;
+      /* failsafe: never cover the site for more than 10s, even if JS fails */
+      animation: ssLoaderFailsafe 0s 10s forwards;
     }
 
-    .ss-scroll-sticky.ss-frame-ready .ss-loading-mark {
-      opacity: 0;
+    #ss-loader canvas {
+      position: absolute;
     }
 
-    .ss-loading-wordmark {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 15px;
-      letter-spacing: 9px;
-      color: rgba(255, 255, 255, 0.35);
-      animation: ssLoadingPulse 1.6s ease-in-out infinite;
+    #ss-loader .ldr-bg {
+      inset: 0;
+      width: 100%;
+      height: 100%;
     }
 
-    .ss-loading-dots {
-      display: flex;
-      gap: 8px;
+    #ss-loader .ldr-hammer {
+      left: 50%;
+      top: 50%;
+      width: clamp(60px, 6.5vw, 100px);
+      height: auto;
+      aspect-ratio: 14 / 16;
+      transform: translate(-50%, -50%);
+      image-rendering: pixelated;
+      transition: opacity .3s ease;
     }
 
-    .ss-loading-dots span {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--lime);
-      animation: ssLoadingDot 1.2s ease-in-out infinite;
-    }
-
-    .ss-loading-dots span:nth-child(2) { animation-delay: .15s; }
-    .ss-loading-dots span:nth-child(3) { animation-delay: .3s; }
-
-    @keyframes ssLoadingPulse {
-      0%, 100% { opacity: 0.35; }
-      50% { opacity: 0.8; }
-    }
-
-    @keyframes ssLoadingDot {
-      0%, 100% { transform: translateY(0); opacity: 0.4; }
-      50% { transform: translateY(-6px); opacity: 1; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .ss-loading-wordmark, .ss-loading-dots span { animation: none; }
+    @keyframes ssLoaderFailsafe {
+      to { visibility: hidden; }
     }
 
     #ss-frameCanvas {
@@ -2573,9 +2555,94 @@
       }
     }
   </style>
+  <noscript><style>#ss-loader{display:none}</style></noscript>
 </head>
 
 <body>
+  <div id="ss-loader" aria-hidden="true">
+    <canvas class="ldr-bg"></canvas>
+    <canvas class="ldr-hammer" width="14" height="16"></canvas>
+  </div>
+  <script>
+  (function () {
+    var root = document.getElementById('ss-loader');
+    if (!root) return;
+    var hc = root.querySelector('.ldr-hammer'), hx = hc.getContext('2d');
+    var bg = root.querySelector('.ldr-bg'), bx = bg.getContext('2d');
+    // The pixel hammer from the logo (Pics/Icon.png), one character per pixel.
+    var G = ['..aaaa........', '..abbbaa......', '..aabbbba.....', '...abbbba.....',
+      '..cdbbbbba....', '..dbbbbbba....', '.abbbdaaba....', 'abbbdcd.a.....',
+      'abba.dcd......', 'aaa...dcd.....', '.......dcd....', '........dcd...',
+      '.........dcd..', '..........dcbb', '...........abb', '...........aaa'];
+    var COL = { a: '#7ED957', b: '#C1FF72', c: '#4D21A8', d: '#2a1560' };
+    var PX = [];
+    G.forEach(function (row, y) {
+      for (var x = 0; x < row.length; x++) if (row[x] !== '.') PX.push([x, y, COL[row[x]], Math.hypot(x - 7, y - 8) / 11]);
+    });
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var seen = false;
+    try { seen = sessionStorage.getItem('ssLoaderSeen') === '1'; sessionStorage.setItem('ssLoaderSeen', '1'); } catch (e) {}
+    // Timeline (ms): blink 0-900, form 900-1800, dissolve once the first hero
+    // frame is ready (and the hammer has held a moment). Repeat visits in the
+    // same session skip the blink.
+    var BLINK = (seen || reduce) ? 0 : 900, FORM = reduce ? 0 : 900, HOLD = 400, DISSOLVE = 900, MAX_WAIT = 8000;
+    var t0 = performance.now(), readyAt = window.__ssFrameReady ? 0 : null, dissolveAt = null, cells = null, cleared = 0;
+    document.addEventListener('ss-frame-ready', function () { if (readyAt === null) readyAt = performance.now() - t0; });
+
+    function drawHammer(t) {
+      hx.clearRect(0, 0, 14, 16);
+      if (t < BLINK) {
+        if (Math.floor(t / 300) % 2 === 0) { hx.fillStyle = '#C1FF72'; hx.fillRect(7, 8, 1, 1); }
+        return;
+      }
+      var g = FORM ? (t - BLINK) / FORM : 1;
+      for (var i = 0; i < PX.length; i++) {
+        var p = PX[i], a = Math.max(0, Math.min(1, (g - p[3] * 0.7) * 3));
+        if (a <= 0) continue;
+        hx.globalAlpha = a; hx.fillStyle = p[2]; hx.fillRect(p[0], p[1], 1, 1);
+      }
+      hx.globalAlpha = 1;
+    }
+
+    function startDissolve() {
+      var dpr = window.devicePixelRatio || 1, W = innerWidth, H = innerHeight, c = 4;
+      bg.width = Math.round(W * dpr); bg.height = Math.round(H * dpr);
+      bx.scale(dpr, dpr);
+      bx.fillStyle = '#0a0a0a'; bx.fillRect(0, 0, W, H);
+      root.style.background = 'transparent';
+      hc.style.opacity = '0';
+      // ordered (Bayer) dither thresholds + a little noise = fine film-like grain
+      var B = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5];
+      cells = [];
+      for (var y = 0; y < H; y += c) for (var x = 0; x < W; x += c)
+        cells.push([x, y, B[((y / c) % 4) * 4 + ((x / c) % 4)] / 16 + Math.random() * 0.06]);
+      cells.sort(function (p, q) { return p[2] - q[2]; });
+    }
+
+    function finish() { if (root.parentNode) root.parentNode.removeChild(root); }
+
+    function step(now) {
+      var t = now - t0;
+      if (dissolveAt === null) {
+        drawHammer(t);
+        var minEnd = BLINK + FORM + HOLD;
+        if ((readyAt !== null && t >= Math.max(minEnd, readyAt)) || t >= MAX_WAIT) {
+          dissolveAt = t;
+          if (reduce) { root.style.transition = 'opacity .4s ease'; root.style.opacity = '0'; setTimeout(finish, 450); return; }
+          startDissolve();
+        }
+        requestAnimationFrame(step);
+        return;
+      }
+      var k = Math.min(1.06, (t - dissolveAt) / DISSOLVE);
+      while (cleared < cells.length && cells[cleared][2] < k) {
+        bx.clearRect(cells[cleared][0], cells[cleared][1], 4, 4); cleared++;
+      }
+      if (cleared < cells.length) requestAnimationFrame(step); else finish();
+    }
+    requestAnimationFrame(step);
+  })();
+  </script>
 
   <!-- AMBIENT LIVE BACKGROUND -->
   <div id="bg-ambient" aria-hidden="true">
@@ -2620,10 +2687,6 @@
   <!-- SCROLL STOP ANIMATION -->
   <section class="ss-scroll-animation" id="services">
     <div class="ss-scroll-sticky">
-      <div class="ss-loading-mark" aria-hidden="true">
-        <div class="ss-loading-dots"><span></span><span></span><span></span></div>
-        <div class="ss-loading-wordmark">SOCIAL SMITHS</div>
-      </div>
       <canvas id="ss-frameCanvas"></canvas>
 
       <div class="ss-callout ss-intro" data-show="0" data-hide="0.10">
@@ -4063,6 +4126,8 @@
           currentFrame = 0;
           const sticky = document.querySelector('.ss-scroll-sticky');
           if (sticky) sticky.classList.add('ss-frame-ready');
+          window.__ssFrameReady = true;
+          document.dispatchEvent(new Event('ss-frame-ready'));
           showFrame();
           scheduleRemaining();
           return;

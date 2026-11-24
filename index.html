@@ -1402,9 +1402,32 @@
       background: linear-gradient(160deg, #001210 0%, #003830 100%);
     }
 
+    /* Still frame shown until the YouTube player is actually playing, so the
+       card is never blank or showing YouTube's own title bar while it loads. */
+    .reel-poster {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+      pointer-events: none;
+      transition: opacity .6s ease;
+    }
+
+    .reel-card-wide .reel-poster {
+      object-fit: cover;
+    }
+
+    .reel-card.is-playing .reel-poster {
+      opacity: 0;
+    }
+
     .reel-overlay {
       position: absolute;
       inset: 0;
+      z-index: 2;
       background: linear-gradient(to top, rgba(0, 0, 0, .9) 0%, rgba(0, 0, 0, .2) 50%, transparent 100%);
       display: flex;
       flex-direction: column;
@@ -2830,6 +2853,7 @@
           data-src="https://www.youtube.com/embed/8VbcUp0jEG4?autoplay=1&mute=1&loop=1&playlist=8VbcUp0jEG4&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
+        <img class="reel-poster" src="Pics/reels/8VbcUp0jEG4.webp" width="480" height="853" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <div class="reel-overlay">
           <div class="reel-info">
             <div class="reel-market">Dubai ✦ Luxury</div>
@@ -2853,6 +2877,7 @@
           data-src="https://www.youtube.com/embed/9s9c1XuOXdo?autoplay=1&mute=1&loop=1&playlist=9s9c1XuOXdo&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
+        <img class="reel-poster" src="Pics/reels/9s9c1XuOXdo.webp" width="480" height="853" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <div class="reel-overlay">
           <div class="reel-info">
             <div class="reel-market">Lonavala ✦ Premium</div>
@@ -2876,6 +2901,7 @@
           data-src="https://www.youtube.com/embed/ijhPcs9tYVY?autoplay=1&mute=1&loop=1&playlist=ijhPcs9tYVY&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
+        <img class="reel-poster" src="Pics/reels/ijhPcs9tYVY.webp" width="480" height="853" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <div class="reel-overlay">
           <div class="reel-info">
             <div class="reel-market">Mumbai ✦ Township</div>
@@ -2899,6 +2925,7 @@
           data-src="https://www.youtube.com/embed/WvYWguQ-tAY?autoplay=1&mute=1&loop=1&playlist=WvYWguQ-tAY&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
+        <img class="reel-poster" src="Pics/reels/WvYWguQ-tAY.webp" width="960" height="540" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <div class="reel-overlay">
           <div class="reel-info">
             <div class="reel-market">Mumbai ✦ Branding</div>
@@ -2922,6 +2949,7 @@
           data-src="https://www.youtube.com/embed/3eEmL1p8Fj8?autoplay=1&mute=1&loop=1&playlist=3eEmL1p8Fj8&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
           frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
           style="width:100%;height:100%;border:0;display:block;"></iframe>
+        <img class="reel-poster" src="Pics/reels/3eEmL1p8Fj8.webp" width="480" height="853" alt="" aria-hidden="true" loading="lazy" decoding="async">
         <div class="reel-overlay">
           <div class="reel-info">
             <div class="reel-market">Pan-India ✦ Creator Series</div>
@@ -3545,43 +3573,57 @@
       const cards = Array.from(document.querySelectorAll('.reel-card'));
       if (!cards.length) return;
 
-      const workSection = document.getElementById('work') || cards[0].closest('section');
-      let started = false;
+      // Each reel only starts loading when it gets close to the screen (not all
+      // five at once), and pauses while it is off screen, so on a phone the reel
+      // you are looking at gets the bandwidth.
+      let apiRequested = false, apiReady = false;
       const entries = [];
-
-      function start() {
-        if (started) return;
-        started = true;
-
-        cards.forEach((card) => {
-          const iframe = card.querySelector('iframe');
-          if (iframe && iframe.dataset.src) {
-            iframe.src = iframe.dataset.src;
-            iframe.removeAttribute('data-src');
-          }
-        });
-
+      function requestApi() {
+        if (apiRequested) return;
+        apiRequested = true;
         const apiScript = document.createElement('script');
         apiScript.src = 'https://www.youtube.com/iframe_api';
         document.head.appendChild(apiScript);
       }
-
-      if (workSection) {
-        const lazyObs = new IntersectionObserver((obsEntries) => {
-          obsEntries.forEach((e) => {
-            if (e.isIntersecting) {
-              start();
-              lazyObs.disconnect();
-            }
-          });
-        }, { rootMargin: '600px 0px', threshold: 0 });
-        lazyObs.observe(workSection);
-      } else {
-        start();
+      function startCard(card) {
+        if (card.dataset.started) return;
+        card.dataset.started = '1';
+        const iframe = card.querySelector('iframe');
+        if (iframe && iframe.dataset.src) {
+          iframe.src = iframe.dataset.src;
+          iframe.removeAttribute('data-src');
+        }
+        requestApi();
+        if (apiReady) initCard(card);
       }
+      const nearObs = new IntersectionObserver((obsEntries) => {
+        obsEntries.forEach((e) => {
+          if (e.isIntersecting) { startCard(e.target); nearObs.unobserve(e.target); }
+        });
+      }, { rootMargin: '300px 0px', threshold: 0 });
+      cards.forEach((c) => nearObs.observe(c));
+
+      const visObs = new IntersectionObserver((obsEntries) => {
+        obsEntries.forEach((e) => {
+          const en = e.target._reel;
+          if (!en || !en.ready) return;
+          try {
+            if (!e.isIntersecting && en.player.getPlayerState() === YT.PlayerState.PLAYING) {
+              en.autoPaused = true; en.player.pauseVideo();
+            } else if (e.isIntersecting && en.autoPaused && !en.userPaused) {
+              en.autoPaused = false; en.player.playVideo();
+            }
+          } catch (err) { /* player not ready */ }
+        });
+      }, { threshold: 0.15 });
 
       window.onYouTubeIframeAPIReady = function () {
-        cards.forEach((card) => {
+        apiReady = true;
+        cards.forEach((card) => { if (card.dataset.started) initCard(card); });
+      };
+
+      function initCard(card) {
+          if (card._reel) return;
           const iframe = card.querySelector('iframe');
           const ctrl = card.querySelector('.reel-ctrl');
           const btn = card.querySelector('.reel-ctrl-btn');
@@ -3589,12 +3631,19 @@
           const fill = card.querySelector('.reel-scrub-fill');
           if (!iframe || !ctrl || !btn || !scrub || !fill) return;
 
-          const entry = { player: null, ready: false, scrubbing: false, ctrl, fill };
+          const entry = { player: null, ready: false, scrubbing: false, ctrl, fill, autoPaused: false, userPaused: false };
+          card._reel = entry;
           entry.player = new YT.Player(iframe, {
             events: {
-              onReady: () => { entry.ready = true; },
+              onReady: () => { entry.ready = true; visObs.observe(card); },
               onStateChange: (e) => {
-                ctrl.classList.toggle('playing', e.data === YT.PlayerState.PLAYING);
+                const playing = e.data === YT.PlayerState.PLAYING;
+                ctrl.classList.toggle('playing', playing);
+                // keep the still frame up a moment longer so YouTube's title bar,
+                // shown for the first second or two, stays hidden
+                if (playing && !card.classList.contains('is-playing')) {
+                  setTimeout(() => card.classList.add('is-playing'), 2500);
+                }
               }
             }
           });
@@ -3604,8 +3653,8 @@
             e.stopPropagation();
             if (!entry.ready) return;
             const state = entry.player.getPlayerState();
-            if (state === YT.PlayerState.PLAYING) entry.player.pauseVideo();
-            else entry.player.playVideo();
+            if (state === YT.PlayerState.PLAYING) { entry.userPaused = true; entry.player.pauseVideo(); }
+            else { entry.userPaused = false; entry.autoPaused = false; entry.player.playVideo(); }
           });
 
           function seekFromEvent(ev) {
@@ -3633,10 +3682,10 @@
             scrub.releasePointerCapture(ev.pointerId);
           });
           scrub.addEventListener('pointercancel', () => { entry.scrubbing = false; });
-        });
+      }
 
-        // progress fill updater
-        setInterval(() => {
+      // progress fill updater
+      setInterval(() => {
           entries.forEach((en) => {
             if (!en.ready || en.scrubbing) return;
             try {
@@ -3646,7 +3695,6 @@
             } catch (e) { /* player not ready yet */ }
           });
         }, 250);
-      };
     })();
 
     // (Desktop "scroll resistance" wheel easing removed 2026-11-24: native

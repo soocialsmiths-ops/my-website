@@ -3610,6 +3610,8 @@
     (function () {
       if (window.matchMedia('(pointer: coarse)').matches) return; // leave touch momentum alone
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      // TEMP test switch: add ?native to the URL to compare with the browser's own scrolling
+      if (new URLSearchParams(location.search).has('native')) return;
 
       const WHEEL_SCALE = 0.7; // <1 = slower than the raw wheel delta
       const DAMP = 0.26;       // lower = more lag/resistance; higher = snappier response

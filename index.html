@@ -12,16 +12,16 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Smiths — Real Estate Marketing Agency | Pan-India & Dubai</title>
+  <title>Real Estate Marketing Agency in India &amp; Dubai | Social Smiths</title>
   <link rel="icon" type="image/png" href="Pics/favicon.png">
   <link rel="apple-touch-icon" href="Pics/favicon.png">
   <link rel="canonical" href="https://socialsmiths.in/">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="description"
-    content="Real estate marketing agency — cinematic video, social media, influencer and performance marketing for developers. Pan-India and Dubai.">
-  <meta property="og:title" content="Social Smiths — Real Estate Marketing Agency | Pan-India & Dubai">
+    content="Real estate marketing agency in India and Dubai: property films, social media, influencer campaigns and performance ads for developers. Based in Mumbai.">
+  <meta property="og:title" content="Real Estate Marketing Agency in India &amp; Dubai | Social Smiths">
   <meta property="og:description"
-    content="Cinematic property video, social media, influencer and performance marketing for real estate developers — pan-India & Dubai.">
+    content="Full-service real estate marketing agency in India and Dubai: cinematic property films, social media, influencer campaigns and performance ads for developers.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://socialsmiths.in/">
   <meta property="og:image" content="https://socialsmiths.in/Pics/og-preview.png">
@@ -29,9 +29,9 @@
   <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="Social Smiths">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Social Smiths — Real Estate Marketing Agency | Pan-India & Dubai">
+  <meta name="twitter:title" content="Real Estate Marketing Agency in India &amp; Dubai | Social Smiths">
   <meta name="twitter:description"
-    content="Cinematic property video, social media, influencer and performance marketing for real estate developers — pan-India & Dubai.">
+    content="Full-service real estate marketing agency in India and Dubai: cinematic property films, social media, influencer campaigns and performance ads for developers.">
   <meta name="twitter:image" content="https://socialsmiths.in/Pics/og-preview.png">
   <script type="application/ld+json">
   {
@@ -42,6 +42,7 @@
     "legalName": "SOCIALSMITHS LLP",
     "alternateName": ["Social Smiths Mumbai", "SocialSmiths", "socialsmiths.in"],
     "url": "https://socialsmiths.in/",
+    "description": "Full-service real estate marketing agency in India: cinematic property films, social media, influencer campaigns and performance ads for developers. Based in Mumbai, working with developers across India and in Dubai.",
     "email": "info@socialsmiths.in",
     "telephone": "+91-90056-31414",
     "sameAs": [
@@ -71,6 +72,8 @@
       "addressCountry": "IN"
     },
     "areaServed": [
+      { "@type": "Country", "name": "India" },
+      { "@type": "Country", "name": "United Arab Emirates" },
       { "@type": "City", "name": "Mumbai" },
       { "@type": "City", "name": "Pune" },
       { "@type": "City", "name": "Delhi" },
@@ -103,7 +106,8 @@
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cinematic Property Video Production", "description": "Walkthroughs, drone footage, lifestyle films and vertical reels for project launches." } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Management", "description": "End-to-end monthly retainer: strategy, content calendar, reels, captions and analytics." } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Influencer Campaign Management", "description": "End-to-end creator campaigns for property launches." } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Influencer Campaign Management", "description": "End-to-end creator campaigns for property launches." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance Marketing", "description": "Paid campaigns and lead generation for project launches." } }
       ]
     }
   }
@@ -703,6 +707,85 @@
     .reveal {
       opacity: 0;
       transform: translateY(48px);
+    }
+
+    /* ═══ MARKETS (India-wide) ═══ */
+    #markets {
+      position: relative;
+      z-index: 5;
+      padding: 96px 56px 40px;
+    }
+
+    .markets-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+
+    .markets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .market-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 22px 22px 24px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--glass-bg);
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color .25s, background .25s;
+    }
+
+    .market-card:hover,
+    .market-card:focus-visible {
+      border-color: var(--lime);
+      background: var(--glass-bg-strong);
+    }
+
+    .market-city {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 1px;
+      line-height: 1;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .market-city span {
+      color: var(--lime);
+      font-size: 18px;
+    }
+
+    .market-note {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-dim);
+    }
+
+    .market-tag {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--lime);
+    }
+
+    @media (max-width: 960px) {
+      #markets {
+        padding: 72px 28px 24px;
+      }
+
+      .markets-top {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
     }
 
     /* ═══ ABOUT ═══ */
@@ -2681,13 +2764,13 @@
         </div>
         <div class="hero-birds" aria-hidden="true"></div>
         <div class="ss-callout-inner">
-          <span class="ss-callout-label">Creative Marketing &nbsp;—&nbsp; Pan-India &nbsp;·&nbsp; Dubai</span>
+          <span class="ss-callout-label">Real Estate Marketing &nbsp;—&nbsp; Across India &nbsp;·&nbsp; Dubai</span>
           <h1 class="ss-callout-title ss-intro-title" aria-label="We make Real Estate Impossible to Ignore.">
             <span aria-hidden="true">We make <br>Real Estate <br><em>Impossible to <span
                 id="type-word">Ignore.</span><span class="type-cursor">|</span></em></span>
           </h1>
-          <p class="ss-callout-desc">End-to-end creative studio for real estate developers — cinematic video, social
-            media, influencer and performance marketing.</p>
+          <p class="ss-callout-desc">Full-service real estate marketing agency for developers across India — cinematic
+            video, social media, influencer and performance marketing.</p>
           <div class="hero-btns">
             <a href="#contact" class="btn-lime">Get a Proposal</a>
             <a href="#work" class="btn-ghost">See Our Work</a>
@@ -3036,6 +3119,51 @@
   </section>
 
 
+
+  <!-- MARKETS: India-wide -->
+  <section id="markets" aria-labelledby="markets-h">
+    <div class="markets-top">
+      <div>
+        <div class="section-label">Where We Work</div>
+        <h2 class="big-h reveal" id="markets-h">Real Estate Marketing<br><em>Across India &amp; Dubai</em></h2>
+      </div>
+      <p class="about-desc reveal">Social Smiths is a real estate marketing agency for developers across India and in
+        Dubai. We're based in Mumbai and travel with our own crew to film, launch and promote projects wherever they're
+        being built: city towers, villas, plotted developments and hotels.</p>
+    </div>
+    <div class="markets-grid">
+      <a class="market-card" href="real-estate-marketing-agency-mumbai/">
+        <span class="market-tag">Headquarters</span>
+        <span class="market-city">Mumbai <span aria-hidden="true">&#8599;</span></span>
+        <span class="market-note">Full-service: property films, social media, influencer campaigns and performance ads.</span>
+      </a>
+      <a class="market-card" href="real-estate-marketing-agency-delhi-ncr/">
+        <span class="market-city">Delhi NCR &amp; Gurugram <span aria-hidden="true">&#8599;</span></span>
+        <span class="market-note">Property films, reels and influencer campaigns for luxury launches.</span>
+      </a>
+      <a class="market-card" href="real-estate-marketing-agency-pune/">
+        <span class="market-city">Pune &amp; Lonavala <span aria-hidden="true">&#8599;</span></span>
+        <span class="market-note">Projects for Kalpataru, Union Living and Paranjape, and villa films in Lonavala.</span>
+      </a>
+      <a class="market-card" href="real-estate-marketing-agency-indore/">
+        <span class="market-city">Indore <span aria-hidden="true">&#8599;</span></span>
+        <span class="market-note">Films and campaigns for Emerald Developers, Micro Mitti, Omaxe and Oscar.</span>
+      </a>
+      <a class="market-card" href="real-estate-marketing-agency-goa/">
+        <span class="market-city">Goa <span aria-hidden="true">&#8599;</span></span>
+        <span class="market-note">Villas, holiday homes and hospitality, including Hilton Goa and Sun Estates.</span>
+      </a>
+      <a class="market-card" href="real-estate-marketing-agency-coimbatore/">
+        <span class="market-city">Coimbatore <span aria-hidden="true">&#8599;</span></span>
+        <span class="market-note">Pan-India influencer campaign for G Square&#8217;s 7 Hills plotted development.</span>
+      </a>
+      <a class="market-card" href="real-estate-marketing-agency-dubai/">
+        <span class="market-tag">International</span>
+        <span class="market-city">Dubai <span aria-hidden="true">&#8599;</span></span>
+        <span class="market-note">Property films and reels that reach Indian and global buyers.</span>
+      </a>
+    </div>
+  </section>
 
   <!-- ABOUT -->
   <section id="about">

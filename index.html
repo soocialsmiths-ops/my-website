@@ -709,82 +709,93 @@
       transform: translateY(48px);
     }
 
-    /* ═══ MARKETS (India-wide) ═══ */
+    /* ═══ MARKETS (India-wide, compact strip) ═══ */
     #markets {
       position: relative;
       z-index: 5;
-      padding: 96px 56px 40px;
+      padding: 64px 56px 24px;
     }
 
-    .markets-top {
+    .markets-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: end;
-      margin-bottom: 48px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 56px;
+      align-items: center;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
     }
 
-    .markets-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 14px;
+    .markets-row .section-label {
+      margin-bottom: 14px;
     }
 
-    .market-card {
+    .markets-h {
+      font-family: 'Bebas Neue', sans-serif;
+      font-weight: 400;
+      font-size: clamp(30px, 3vw, 44px);
+      line-height: 1;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    .markets-h em {
+      color: var(--lime);
+      font-style: normal;
+    }
+
+    .markets-note {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-dim);
+      max-width: 560px;
+    }
+
+    .market-pills {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       gap: 10px;
-      padding: 22px 22px 24px;
+    }
+
+    .market-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 999px;
       background: var(--glass-bg);
       color: var(--text);
+      font-size: 13px;
+      letter-spacing: .3px;
       text-decoration: none;
-      transition: border-color .25s, background .25s;
+      transition: border-color .25s, color .25s, background .25s;
     }
 
-    .market-card:hover,
-    .market-card:focus-visible {
+    .market-pill span {
+      color: var(--lime);
+      font-size: 11px;
+    }
+
+    .market-pill:hover,
+    .market-pill:focus-visible {
       border-color: var(--lime);
       background: var(--glass-bg-strong);
     }
 
-    .market-city {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 28px;
-      letter-spacing: 1px;
-      line-height: 1;
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .market-city span {
-      color: var(--lime);
-      font-size: 18px;
-    }
-
-    .market-note {
-      font-size: 13px;
-      line-height: 1.6;
-      color: var(--text-dim);
-    }
-
-    .market-tag {
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--lime);
-    }
-
     @media (max-width: 960px) {
       #markets {
-        padding: 72px 28px 24px;
+        padding: 48px 28px 16px;
       }
 
-      .markets-top {
+      .markets-row {
         grid-template-columns: 1fr;
         gap: 24px;
+        padding-bottom: 32px;
+      }
+
+      .market-pill {
+        padding: 9px 14px;
+        font-size: 12px;
       }
     }
 
@@ -3120,48 +3131,25 @@
 
 
 
-  <!-- MARKETS: India-wide -->
+  <!-- MARKETS: India-wide (compact strip) -->
   <section id="markets" aria-labelledby="markets-h">
-    <div class="markets-top">
+    <div class="markets-row">
       <div>
         <div class="section-label">Where We Work</div>
-        <h2 class="big-h reveal" id="markets-h">Real Estate Marketing<br><em>Across India &amp; Dubai</em></h2>
+        <h2 class="markets-h" id="markets-h">Real estate marketing across <em>India &amp; Dubai</em></h2>
+        <p class="markets-note">Based in Mumbai, our crew films and launches projects wherever they're being built.
+          Recent work includes Kalpataru in Pune, Hilton Goa, G Square&#8217;s 7 Hills in Coimbatore, Emerald
+          Developers in Indore and Bugatti Residences in Dubai.</p>
       </div>
-      <p class="about-desc reveal">Social Smiths is a real estate marketing agency for developers across India and in
-        Dubai. We're based in Mumbai and travel with our own crew to film, launch and promote projects wherever they're
-        being built: city towers, villas, plotted developments and hotels.</p>
-    </div>
-    <div class="markets-grid">
-      <a class="market-card" href="real-estate-marketing-agency-mumbai/">
-        <span class="market-tag">Headquarters</span>
-        <span class="market-city">Mumbai <span aria-hidden="true">&#8599;</span></span>
-        <span class="market-note">Full-service: property films, social media, influencer campaigns and performance ads.</span>
-      </a>
-      <a class="market-card" href="real-estate-marketing-agency-delhi-ncr/">
-        <span class="market-city">Delhi NCR &amp; Gurugram <span aria-hidden="true">&#8599;</span></span>
-        <span class="market-note">Property films, reels and influencer campaigns for luxury launches.</span>
-      </a>
-      <a class="market-card" href="real-estate-marketing-agency-pune/">
-        <span class="market-city">Pune &amp; Lonavala <span aria-hidden="true">&#8599;</span></span>
-        <span class="market-note">Projects for Kalpataru, Union Living and Paranjape, and villa films in Lonavala.</span>
-      </a>
-      <a class="market-card" href="real-estate-marketing-agency-indore/">
-        <span class="market-city">Indore <span aria-hidden="true">&#8599;</span></span>
-        <span class="market-note">Films and campaigns for Emerald Developers, Micro Mitti, Omaxe and Oscar.</span>
-      </a>
-      <a class="market-card" href="real-estate-marketing-agency-goa/">
-        <span class="market-city">Goa <span aria-hidden="true">&#8599;</span></span>
-        <span class="market-note">Villas, holiday homes and hospitality, including Hilton Goa and Sun Estates.</span>
-      </a>
-      <a class="market-card" href="real-estate-marketing-agency-coimbatore/">
-        <span class="market-city">Coimbatore <span aria-hidden="true">&#8599;</span></span>
-        <span class="market-note">Pan-India influencer campaign for G Square&#8217;s 7 Hills plotted development.</span>
-      </a>
-      <a class="market-card" href="real-estate-marketing-agency-dubai/">
-        <span class="market-tag">International</span>
-        <span class="market-city">Dubai <span aria-hidden="true">&#8599;</span></span>
-        <span class="market-note">Property films and reels that reach Indian and global buyers.</span>
-      </a>
+      <div class="market-pills">
+        <a class="market-pill" href="real-estate-marketing-agency-mumbai/">Mumbai <span aria-hidden="true">&#8599;</span></a>
+        <a class="market-pill" href="real-estate-marketing-agency-delhi-ncr/">Delhi NCR &amp; Gurugram <span aria-hidden="true">&#8599;</span></a>
+        <a class="market-pill" href="real-estate-marketing-agency-pune/">Pune &amp; Lonavala <span aria-hidden="true">&#8599;</span></a>
+        <a class="market-pill" href="real-estate-marketing-agency-indore/">Indore <span aria-hidden="true">&#8599;</span></a>
+        <a class="market-pill" href="real-estate-marketing-agency-goa/">Goa <span aria-hidden="true">&#8599;</span></a>
+        <a class="market-pill" href="real-estate-marketing-agency-coimbatore/">Coimbatore <span aria-hidden="true">&#8599;</span></a>
+        <a class="market-pill" href="real-estate-marketing-agency-dubai/">Dubai <span aria-hidden="true">&#8599;</span></a>
+      </div>
     </div>
   </section>
 
